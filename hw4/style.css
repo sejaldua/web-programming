@@ -1,11 +1,12 @@
 @import url(fontawesome-all.min.css);
 
-songs { 
+setlist { 
      color: black; 
      width: 100%; 
 } 
 songA {
      background-color: #A9B9C9;
+     margin: 1em 1em 1em 1em;
 }
 songB {
      background-color: #93ADC1;
@@ -21,8 +22,8 @@ html, body {
      font-family: 'Open Sans', sans-serif;
      box-sizing: border-box;
      margin: 1em;
-   }
- heading, artist, album, genre, year { 
+}
+ heading, body, duration, artist, album, genre, year { 
      display : block; 
 } 
  name { 

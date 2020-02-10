@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <?xml-stylesheet type="text/css" href="style.css"?> 
 <!-- <?xml-stylesheet type="text/xsl" href="concert.xsl" ?> -->
-<songs> 
+<setlist> 
     <heading> Mumford And Sons World Tour </heading> 
-    <songA> 
-        <name>1. I Will Wait</name> 
-        <time>Time: 4:37</time>
-        <artist>Artist: Mumford And Sons</artist> 
-        <album>Album: Babel</album>
-        <genre>Genre: Indie/Folk Rock</genre> 
-        <year>Year: 2012</year>  
-    </songA> 
-    <songA> 
-        <name>2. There Will Be Time</name> 
-        <time>Time: 4:27</time>
-        <artist>Artist: Mumford And Sons, Baaba Maal</artist> 
-        <album>Album: Johannesburg</album>
-        <genre>Genre: Indie/Folk Rock</genre> 
-        <year>Year: 2016</year>  
-    </songA> 
-</songs> 
+    <body>
+        <songA> 
+            <name>1. I Will Wait</name> 
+            <duration>Duration: 4:37</duration>
+            <artist>Artist: Mumford And Sons</artist> 
+            <album>Album: Babel</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2012</year>  
+        </songA> 
+        <songA> 
+            <name>2. There Will Be Time</name> 
+            <duration>Duration: 4:27</duration>
+            <artist>Artist: Mumford And Sons, Baaba Maal</artist> 
+            <album>Album: Johannesburg</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2016</year>  
+        </songA> 
+    </body>
+</setlist> 

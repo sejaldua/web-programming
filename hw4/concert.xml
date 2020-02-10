@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <?xml-stylesheet type="text/css" href="style.css"?> 
 <songs> 
-    <heading> Mumford &amp Sons World Tour </heading> 
+    <heading> Mumford And Sons World Tour </heading> 
     <song> 
         <name>1. I Will Wait</name> 
-        <artist>Artist(s): Mumford &amp Sons</artist> 
+        <artist>Artist(s): Mumford And Sons</artist> 
         <genre>Genre: Wiley</genre> 
         <year>Year: 3</year>  
     </song> 

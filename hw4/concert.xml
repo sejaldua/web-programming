@@ -2,34 +2,34 @@
 <?xml-stylesheet type="text/css" href="style.css"?> 
 <songs> 
     <heading> Mumford And Sons World Tour </heading> 
-    <song> 
+    <songA> 
         <name>1. I Will Wait</name> 
-        <artist>Artist(s): Mumford And Sons</artist> 
-        <genre>Genre: Wiley</genre> 
-        <year>Year: 3</year>  
-    </song> 
-    <song> 
+        <artist>Album: Babel</artist> 
+        <genre>Genre: Indie/Folk Rock</genre> 
+        <year>Year: 2012</year>  
+    </songA> 
+    <songB> 
         <name>Song: Internet world-wide-web</name> 
         <artist>Artist(s): Ditel</artist> 
         <genre>Genre: Pearson</genre> 
         <year>Year: 3</year> 
-    </song> 
-    <song> 
+    </songB> 
+    <songA> 
         <name>Song: Computer Networks</name> 
         <artist>Artist(s): Foruouzan</artist> 
         <genre>Genre: Mc Graw Hill</genre> 
         <year>Year: 5</year> 
-    </song> 
-    <song> 
+    </songA> 
+    <songB> 
         <name>Song: DBMS Concepts</name> 
         <artist>Artist(s): Navath</artist> 
         <genre>Genre: Oxford</genre> 
         <year>Year: 5</year> 
-    </song> 
-    <song> 
+    </songB> 
+    <songA> 
         <name>Song: Linux Programming</name> 
         <artist>Artist(s): Subhitab Das</artist> 
         <genre>Genre: Oxford</genre> 
         <year>Year: 8</year> 
-    </song> 
+    </songA> 
 </songs> 

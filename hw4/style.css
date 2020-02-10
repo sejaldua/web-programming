@@ -13,7 +13,7 @@ songB {
  heading { 
      color: black; 
      font-size : 30px; 
-     background-color : DDCDBC; 
+     background-color : #DDCDBC; 
 } 
  heading, name, artist, genre, year { 
      display : block; 

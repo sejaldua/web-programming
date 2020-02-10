@@ -6,7 +6,7 @@
     <body>
         <songA> 
             <name>1. I Will Wait</name> 
-            <duration>Duration: 4:37</duration>
+            <duration>[4:37]</duration>
             <artist>Artist(s): Mumford And Sons</artist> 
             <album>Album: Babel</album>
             <genre>Genre: Indie/Folk Rock</genre> 
@@ -14,7 +14,7 @@
         </songA> 
         <songA> 
             <name>2. There Will Be Time</name> 
-            <duration>Duration: 4:27</duration>
+            <duration>[4:27]</duration>
             <artist>Artist(s): Mumford And Sons, Baaba Maal</artist> 
             <album>Album: Johannesburg</album>
             <genre>Genre: Indie/Folk Rock</genre> 

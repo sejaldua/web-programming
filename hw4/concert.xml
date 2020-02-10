@@ -11,12 +11,12 @@
         <genre>Genre: Indie/Folk Rock</genre> 
         <year>Year: 2012</year>  
     </songA> 
-    <songB> 
+    <songA> 
         <name>2. There Will Be Time</name> 
         <time>4:27</time>
         <artist>Artist: Mumford And Sons, Baaba Maal</artist> 
         <album>Album: Johannesburg</album>
         <genre>Genre: Indie/Folk Rock</genre> 
         <year>Year: 2016</year>  
-    </songB> 
+    </songA> 
 </songs> 

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Flex Demo</title>
+	
+<style type="text/css">
+html,body {font-size: 20px;}
+#page-container {
+  display: flex;
+}
+
+.sidebar{
+  width: 150px; 
+}
+	
+.sidebar.left {height: 400px; background-color: #D4D69D;}
+.sidebar.right {background-color: #959FD8;}
+.main-content { 
+  flex-grow: 1; 
+  margin: 0 2%;
+  background-color: #d7d7d7;
+}
+	
+	@media (max-width: 600px)
+	{
+		#page-container {display:block}
+		.sidebar,.main-content {display:block;}
+		.main-content {flex-grow: unset; margin: 0; }
+	}
+	
+</style>
+</head>
+
+<body>
+<div id = "page-container">
+	<div class='sidebar left'>
+	This goes in the left sidebar
+	</div>	
+	<div class='main-content'>This is the main content</div>
+	<div class='sidebar right'>
+	This goes in the right sidebar
+	</div>	
+</div>
+</body>
+</html>

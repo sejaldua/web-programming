@@ -1,3 +1,4 @@
+@import url(fontawesome-all.min.css);
 
 songs { 
      color: black; 
@@ -9,12 +10,18 @@ songA {
 songB {
      background-color: #93ADC1;
 }
- heading { 
+heading { 
      color: black; 
      font-size : 30px; 
      background-color : #DDCDBC; 
 } 
- heading, name, time, artist, album, genre, year { 
+html, body {
+     background-color: #A9B9C9;
+     height: 100%;
+     font-family: 'Open Sans', sans-serif;
+     box-sizing: border-box;
+   }
+ heading, artist, album, genre, year { 
      display : block; 
 } 
  name { 

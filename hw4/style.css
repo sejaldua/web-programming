@@ -3,14 +3,14 @@
 setlist { 
      color: black; 
      width: 100%; 
-     margin: 1em 1em 2em 1em;
+     margin: 0em 1em 1em 1em;
      background-color: #A9B9C9;
 } 
 songA {
-     background-color: #A9B9C9;
+     background-color: white;
 }
 songB {
-     background-color: #93ADC1;
+     background-color: yellow;
 }
 heading { 
      color: black; 
@@ -25,10 +25,13 @@ html, body {
      box-sizing: border-box;
      margin: 1em;
 }
- heading, setlist, songA, name, duration, artist, album, genre, year { 
+ heading, setlist, songA, name, artist, album, genre, year { 
      display : block; 
 } 
  name { 
      font-size : 20px; 
      font-weight : bold; 
 } 
+ duration {
+      font-size: 16px;
+ }

@@ -14,10 +14,10 @@ songB {
      font-size : 30px; 
      background-color : #DDCDBC; 
 } 
- heading, name, artist, genre, year { 
+ heading, name, time, artist, album, genre, year { 
      display : block; 
 } 
  name { 
-     font-size : 25px; 
+     font-size : 20px; 
      font-weight : bold; 
 } 

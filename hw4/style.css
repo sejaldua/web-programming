@@ -1,13 +1,20 @@
 
 songs { 
-     color: white; 
+     color: black; 
      background-color : gray; 
      width: 100%; 
 } 
+songA {
+     background-color: #A9B9C9;
+
+}
+songB {
+     background-color: #93ADC1;
+}
  heading { 
-     color: green; 
-     font-size : 40px; 
-     background-color : powderblue; 
+     color: black; 
+     font-size : 30px; 
+     background-color : DDCDBC; 
 } 
  heading, name, artist, genre, year { 
      display : block; 

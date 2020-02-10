@@ -25,7 +25,7 @@ html, body {
      box-sizing: border-box;
      margin: 1em;
 }
- heading, songA, name, artist, album, genre, year { 
+ heading, artist, album, genre, year { 
      display : block; 
 } 
  name { 

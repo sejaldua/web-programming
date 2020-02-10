@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+friend {
+	display:block; 
+	margin-bottom: 15px; 
+	padding-bottom: 10px;
+	border-bottom: .7px solid #333;
+	font-family:"Gill Sans", Helvetica, Arial, "sans-serif"}
+name {display:block; font-size: 22px; }
+phone {font-style: italic; font-size: 19px;}

@@ -1,4 +1,4 @@
-@import url(fontawesome-all.min.css);
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
 
 setlist { 
      color: black; 
@@ -22,7 +22,7 @@ heading {
 html, body {
      background-color: #A9B9C9;
      height: 100%;
-     font-family: 'Open Sans', sans-serif;
+     font-family: 'Nanum Gothic', sans-serif;
      box-sizing: border-box;
      margin: 0em 1em;
 }

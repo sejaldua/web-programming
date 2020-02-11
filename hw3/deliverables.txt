@@ -1,4 +1,4 @@
-URL of online site: https://sejaldua.com/web-programming/hw3/index.html
+URL: https://sejaldua.com/web-programming/hw3/index.html
 NAME: Decluttr
 ABOUT: We clean up cluttered Desktops because an organized file system can boost productivity significantly. We know that everyone is busy, so we strive to make your life easier by grouping your files by extension type and purging of junk files via our suggestive software.
 TARGET DEMOGRAPHIC: anyone with a personal computer and a busy life (especially developers who downloads lots of things from the internet but never clean up their files and folders)

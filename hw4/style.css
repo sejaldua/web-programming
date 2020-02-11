@@ -3,12 +3,12 @@
 setlist { 
      color: black; 
      width: 100%; 
-     margin: 0em 1em 1em 1em;
+     margin: 0em 1em;
      background-color: #A9B9C9;
 } 
 songA {
      background-color: #93ADC1;
-     margin: 1em 1em 1em 1em;
+     margin: 0em 1em;
 }
 songB {
      background-color: pink;
@@ -24,16 +24,16 @@ html, body {
      height: 100%;
      font-family: 'Open Sans', sans-serif;
      box-sizing: border-box;
-     margin: 1em;
+     margin: 0em 1em;
 }
- heading, artist, album, genre, year { 
+heading, artist, album, genre, year { 
      display : block; 
      margin: 0em 1em;
 } 
- name { 
+name { 
      font-size : 20px; 
      font-weight : bold; 
 } 
- duration {
-      font-size: 16px;
- }
+duration {
+     font-size: 16px;
+}

@@ -19,7 +19,7 @@ delta {
      background-color: #C98D9F;
 }
 wilder {
-     background-color: #3D72AA;
+     background-color: #6181A3;
 }
 heading { 
      color: black; 
@@ -37,7 +37,7 @@ heading, artist, album, genre, year {
      display : block; 
 } 
 name { 
-     font-size : 20px; 
+     font-size : 18px; 
      font-weight : bold; 
 } 
 duration {

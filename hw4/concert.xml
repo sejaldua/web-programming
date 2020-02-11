@@ -52,6 +52,37 @@
             <genre>Genre: Indie/Folk Rock</genre> 
             <year>Year: 2018</year>
         </delta>
-
+        <johan> 
+            <name>7. Wona</name> 
+            <duration>[4:00]</duration>
+            <artist>Artist(s): Mumford &amp; Sons, Baaba Maal</artist> 
+            <album>Album: Johannesburg</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2016</year>  
+        </johan> 
+        <delta>
+            <name>8. 42</name> 
+            <duration>[4:01]</duration>
+            <artist>Artist(s): Mumford &amp; Sons</artist> 
+            <album>Album: Delta</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2018</year>
+        </delta>
+        <wilder>
+            <name>9. Wilder Mind</name> 
+            <duration>[4:38]</duration>
+            <artist>Artist(s): Mumford &amp; Sons</artist> 
+            <album>Album: Wilder Mind</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2015</year>
+        </wilder>
+        <wilder>
+            <name>10. Only Love</name> 
+            <duration>[4:37]</duration>
+            <artist>Artist(s): Mumford &amp; Sons</artist> 
+            <album>Album: Wilder Mind</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2015</year>
+        </wilder>
     </body>
 </setlist> 

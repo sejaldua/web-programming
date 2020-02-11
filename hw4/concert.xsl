@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-<xsl:template match="Encore">
-    <encore style="border: 1px solid #000;">
-        <xsl:value-of select="name"/>
-    </encore>
-</xsl:template>
 <xsl:template match="/">
     <html>
         <head>
@@ -12,9 +7,19 @@
         </head>
         <body>
             <link rel="stylesheet" href="style.css">
-            <encore>
-              <xsl:apply-templates select="Encore"/>
-            </encore>
+            <xsl:for-each select="encore">
+                <div style="background-color:teal;color:white;padding:4px">
+                    <span style="font-weight:bold"><xsl:value-of select="name"/> - </span>
+                    <xsl:value-of select="duration"/>
+                </div>
+                <div style="margin-left:20px;margin-bottom:1em;font-size:10pt">
+                    <span><xsl:value-of select="artist"/></span>
+                    <span><xsl:value-of select="album"/></span>
+                    <span><xsl:value-of select="genre"/></span>
+                    <span><xsl:value-of select="year"/></span>
+                    </p>
+                </div>
+            </xsl:for-each>
         </body>
     </html> 
 </xsl:template>

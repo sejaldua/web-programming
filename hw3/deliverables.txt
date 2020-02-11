@@ -1,0 +1,14 @@
+URL of online site: https://sejaldua.com/web-programming/hw3/index.html
+NAME: Decluttr
+ABOUT: We clean up cluttered Desktops because an organized file system can boost productivity significantly. We know that everyone is busy, so we strive to make your life easier by grouping your files by extension type and purging of junk files via our suggestive software.
+TARGET DEMOGRAPHIC: anyone with a personal computer and a busy life (especially developers who downloads lots of things from the internet but never clean up their files and folders)
+
+What was the easiest part of this assignment?
+- Linking the files together via the header. It was fun to create the active class and the hover effect which helps the user transition between HTML pages.
+- Color styling via https://coolors.co
+- Importing fonts
+
+What was the most challenging part of this assignment?
+- Coming up with the small business idea
+- Learning how to use flex containers
+- How time consuming it was

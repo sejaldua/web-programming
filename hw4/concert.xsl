@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:template match="Encore">
+    <encore style="border: 1px solid #000;">
+        <xsl:value-of select="name"/>
+    </encore>
+</xsl:template>
+<xsl:template match="/">
+    <html>
+        <head>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <link rel="stylesheet" href="style.css">
+            <encore>
+              <xsl:apply-templates select="Encore"/>
+            </encore>
+        </body>
+    </html> 
+</xsl:template>
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 <body style="font-family:Arial;font-size:12pt;background-color:#EEEEEE">
 <xsl:for-each select="songs/songA">
   <div style="background-color:teal;color:white;padding:4px">
@@ -15,4 +36,4 @@
   </div>
 </xsl:for-each>
 </body>
-</html>
+</html> -->

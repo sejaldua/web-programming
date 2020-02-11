@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?> 
-<?xml-stylesheet type="text/css" href="style.css"?> 
-<!-- <?xml-stylesheet type="text/xsl" href="concert.xsl" ?> -->
+<!-- <?xml-stylesheet type="text/css" href="style.css"?>  -->
+<?xml-stylesheet type="text/xsl" href="concert.xsl" ?>
 <setlist> 
     <heading> MUMFORD &amp; SONS WORLD TOUR </heading> 
     <body>
@@ -84,5 +84,13 @@
             <genre>Genre: Indie/Folk Rock</genre> 
             <year>Year: 2015</year>
         </wilder>
+        <encore>
+            <name>10. Only Love</name> 
+            <duration>[4:37]</duration>
+            <artist>Artist(s): Mumford &amp; Sons</artist> 
+            <album>Album: Wilder Mind</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2015</year>
+        </encore>
     </body>
 </setlist> 

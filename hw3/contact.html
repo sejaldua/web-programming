@@ -24,36 +24,29 @@
   </div>	
 <style type = "text/css">
 	body {background-color: #3C3456;}
+	.flex-container {display: flex; justify-content: space-around; margin: 5px;}
 </style>
 
 <body>
-	<div class="container">
+	<div>
 		<div>
 			<h1 class="display-4"; style="box-sizing: border-box; background-color: #7B5E7B; border-radius:2px">Contact</h1>
-			<div style="text-align:center; background-color:#C6DCEF; border-radius:2px; opacity: 50%;"">
-					<h3 style="color: #3C3456; size:15px"> Call us: (314)-159-2653</h3>
-					<h3 style="color: #3C3456; size:15px"> Email us: desktopitis@decluttr.com</h3>
-					<h3 style="color: #3C3456; size:15px"> Locate us: 323 SW Washington St. Somerville, MA 02144</h3>
+			<div style="background-color:#C6DCEF; border-radius:2px; opacity: 80%;"">
+				<div class="flex-container" style="color: #3C3456; size:15px">
+					<h2 style="color: #3C3456"><b>PHONE:</b><br>
+					(314)-159-2653</h2>
+				</div>
+				<div class="flex-container" style="color: #3C3456; size:15px">
+					<h2 style="color: #3C3456"><b>EMAIL:</b><br>
+					desktopitis@decluttr.com</h2>
+				</div>
+				<div class="flex-container" style="color: #3C3456; size:15px">
+					<h2 style="color: #3C3456"><b>ADDRESS:</b><br>
+					323 SW Washington St. <br>Somerville, MA 02144</h2>
+				</div>
 			</div>
 	</div>
 
-		<!-- <form method="get">
-			<div class='col1'></div>
-			<div class='col1'></div>
-			<div class='col2' style="background-color: #3C3456; border-radius:20px">
-				<br>
-				<h3> Or send us a message! </h3>
-				<label>Name:</label> <input type = "text" name ="name" id="id" placeholder="John Doe">
-				<label>Email:</label> <input type = "text" name ="email" id="email" placeholder="desktopitis@decluttr.com">
-				<label>Message:</label> <input type = "text" name ="email" id="message" placeholder="Type your message here...">
-				<br>
-				<div class='col1'>Join e-list?
-					<input type="checkbox" name="join" value='yes'>
-				</div>
-				<br>
-			<input type="button" value="Submit">
-			<br>
-		</form> -->
 	<div>
 		<section>
 			<form name="input" method="POST" action="https://formspree.io/sejal.dua@tufts.edu">

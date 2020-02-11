@@ -3,28 +3,32 @@
 setlist { 
      color: black; 
      width: 100%; 
-     margin: 0em 1em;
+     margin: 1em;
      background-color: #A9B9C9;
 } 
 babel {
-     background-color: #93ADC1;
+     background-color: #AF7C74;
 }
 johan {
      background-color: #8293BA;
+}
+sigh {
+     background-color: #93ADC1;
+}
+delta {
+     background-color: #C98D9F;
 }
 heading { 
      color: black; 
      font-size : 30px; 
      font-family: 'Nanum Gothic', sans-serif;
      background-color : #6B9FAF; 
-     margin: 0em 1em;
 } 
 html, body {
      background-color: #A9B9C9;
      height: 100%;
      font-family: 'Nanum Gothic', sans-serif;
      box-sizing: border-box;
-     margin: 0em 1em;
 }
 heading, artist, album, genre, year { 
      display : block; 

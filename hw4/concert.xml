@@ -2,7 +2,7 @@
 <?xml-stylesheet type="text/css" href="style.css"?> 
 <!-- <?xml-stylesheet type="text/xsl" href="concert.xsl" ?> -->
 <setlist> 
-    <heading> Mumford &amp; Sons World Tour </heading> 
+    <heading> MUMFORD &amp; SONS WORLD TOUR </heading> 
     <body>
         <babel> 
             <name>1. I Will Wait</name> 
@@ -20,5 +20,38 @@
             <genre>Genre: Indie/Folk Rock</genre> 
             <year>Year: 2016</year>  
         </johan> 
+        <sigh>
+            <name>3. Awake My Soul</name> 
+            <duration>[4:16]</duration>
+            <artist>Artist(s): Mumford &amp; Sons</artist> 
+            <album>Album: Sigh No More</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2008</year>  
+        </sigh>
+        <sigh>
+            <name>4. After The Storm</name> 
+            <duration>[4:08]</duration>
+            <artist>Artist(s): Mumford &amp; Sons</artist> 
+            <album>Album: Sigh No More</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2009</year>  
+        </sigh>
+        <babel>
+            <name>5. Below My Feet</name> 
+            <duration>[4:51]</duration>
+            <artist>Artist(s): Mumford &amp; Sons</artist> 
+            <album>Album: Babel</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2012</year>
+        </babel>
+        <delta>
+            <name>6. Woman</name> 
+            <duration>[4:35]</duration>
+            <artist>Artist(s): Mumford &amp; Sons</artist> 
+            <album>Album: Delta</album>
+            <genre>Genre: Indie/Folk Rock</genre> 
+            <year>Year: 2018</year>
+        </delta>
+
     </body>
 </setlist> 

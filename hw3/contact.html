@@ -37,7 +37,7 @@
 			</div>
 	</div>
 
-		<form method="get">
+		<!-- <form method="get">
 			<div class='col1'></div>
 			<div class='col1'></div>
 			<div class='col2' style="background-color: #3C3456; border-radius:20px">
@@ -53,6 +53,24 @@
 				<br>
 			<input type="button" value="Submit">
 			<br>
-		</form>
+		</form> -->
+	<div>
+		<section>
+			<form name="input" method="POST" action="https://formspree.io/sejal.dua@tufts.edu">
+				Name: <input type="text" name="name" placeholder="Your name"></input>
+				<br>
+				Email: <input type="email" name="user email" placeholder="Your email"></input>
+				<br><br>
+				Message: <textarea name="message" placeholder="Type your message"/></textarea>
+				<div class='col1'>Join e-list?
+					<input type="checkbox" name="join" value='yes'>
+				</div>
+				<br>
+				<input type="submit" value="Send Message"></input>
+				<input type="hidden" name="_subject" value="Someone Messaged You!"></input>
+				<input type="hidden" name="_next" value="thanks.html"></input>
+			</form>
+		</section>
+	</div>
 					
 </body>

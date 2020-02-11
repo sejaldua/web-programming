@@ -8,11 +8,9 @@ setlist {
 } 
 babel {
      background-color: #93ADC1;
-     margin: 0em 1em;
 }
 johan {
      background-color: #8293BA;
-     margin: 0em 1em;
 }
 heading { 
      color: black; 
@@ -30,7 +28,6 @@ html, body {
 }
 heading, artist, album, genre, year { 
      display : block; 
-     margin: 0em 1em;
 } 
 name { 
      font-size : 20px; 

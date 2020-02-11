@@ -1,14 +1,14 @@
 
 @import url('fontawesome-all.min.css');
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic');
-@import url('https://fonts.googleapis.com/css?family=Barlow|Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Barlow:300|Nanum+Gothic|PT+Sans|Roboto+Condensed:300|Ropa+Sans|Signika+Negative:300&display=swap');
 
 @-ms-viewport {
     width: device-width;
 }
 
 body {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Signika Negative', sans-serif;
   text-align: center;
   color: D1CFE2;
   font-size: 28px;
@@ -23,14 +23,14 @@ h1 {
 }
 
 h2 {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Signika Negative', sans-serif;
     text-align: center;
     color: #D1CFE2;
     font-size: 28px;
   }
 
 h3 {
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Signika Negative', sans-serif;
   text-align: center;
   color: #D1CFE2;
   font-size: 28px;

@@ -16,8 +16,9 @@ songB {
 heading { 
      color: black; 
      font-size : 30px; 
+     font-family: 'Nanum Gothic', sans-serif;
      background-color : #DDCDBC; 
-     margin: 1em 1em 1em 1em;
+     margin: 0em 1em;
 } 
 html, body {
      background-color: #A9B9C9;

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?> 
 <?xml-stylesheet type="text/css" href="style.css"?> 
 <!-- <?xml-stylesheet type="text/xsl" href="concert.xsl" ?> -->
 <setlist> 
@@ -86,3 +86,8 @@
         </wilder>
     </body>
 </setlist> 
+<oembed>
+	<html>
+        <iframe src="https://open.spotify.com/embed/playlist/5bbLHMJmAUf32GljH1NRXN" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" align="middle"></iframe>
+    </html>
+</oembed>

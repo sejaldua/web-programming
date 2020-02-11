@@ -3,13 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic');
 @import url('https://fonts.googleapis.com/css?family=Barlow|Nanum+Gothic&display=swap');
 
+@-ms-viewport {
+    width: device-width;
+}
+
 body {
   font-family: 'Barlow', sans-serif;
   text-align: center;
   color: D1CFE2;
   font-size: 28px;
 }
-
 
 
 h1 {

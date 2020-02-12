@@ -39,9 +39,9 @@ h3 {
 
 
 p {
+  font-family: 'Barlow', sans-serif;
   margin: 2em 1em;
   color: #D1CFE2;
-  font-family: 'Barlow', sans-serif;
 }
 
 .page-header {
@@ -134,41 +134,3 @@ p {
 .header-right {
   float: right;
 }
-
-/* a {
-    -moz-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-    -webkit-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-    -ms-transition: color 0.2s ease, border-bottom-color 0.2s ease;
-    transition: color 0.2s ease, border-bottom-color 0.2s ease;
-    color: inherit;
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-}
-
-    a:hover {
-        border-bottom-color: #fff;
-    } */
- 
-    /* 
-    a.effect-underline:after {
-        content: '';
-    position: absolute;
-    left: 0;
-    display: inline-block;
-    height: 1em;
-    width: 100%;
-    border-bottom: 1px solid;
-    margin-top: 10px;
-    opacity: 0;
-        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-        transition: opacity 0.35s, transform 0.35s;
-        -webkit-transform: scale(0,1);
-        transform: scale(0,1);
-    }
-
-    a.effect-underline:hover:after {
-    opacity: 1;
-        -webkit-transform: scale(1);
-        transform: scale(1);
-    } */

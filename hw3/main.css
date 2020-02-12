@@ -7,7 +7,7 @@
     width: device-width;
 }
 
-body {
+body, a {
   font-family: 'Signika Negative', sans-serif;
   text-align: center;
   color: D1CFE2;
@@ -172,4 +172,3 @@ a {
         -webkit-transform: scale(1);
         transform: scale(1);
     }
-    

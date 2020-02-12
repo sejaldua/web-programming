@@ -20,26 +20,26 @@ h1 {
   font-weight: 700;
   margin-top: 40px;
   font-size: 32px;
+  padding: 0.5em;
 }
 
 h2 {
     font-family: 'Signika Negative', sans-serif;
     text-align: center;
     color: #D1CFE2;
-    font-size: 16px;
+    font-size: 26px;
   }
 
 h3 {
   font-family: 'Signika Negative', sans-serif;
   text-align: center;
   color: #D1CFE2;
-  font-size: 16px;
 }
 
 
 
 p {
-  margin: 1em;
+  margin: 2em 1em;
   color: #D1CFE2;
 }
 

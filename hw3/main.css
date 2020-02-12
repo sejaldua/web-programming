@@ -147,10 +147,10 @@ a {
 }
 
     a:hover {
-        border-bottom-color: transparent;
+        border-bottom-color: #fff;
     }
-
-    /*effect-underline*/
+ 
+    /* 
     a.effect-underline:after {
         content: '';
     position: absolute;
@@ -171,4 +171,4 @@ a {
     opacity: 1;
         -webkit-transform: scale(1);
         transform: scale(1);
-    }
+    } */

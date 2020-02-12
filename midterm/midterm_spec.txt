@@ -1,0 +1,30 @@
+This is a GROUP PROJECT.  Every member of the group will receive the same grade.
+
+Your assignment is to create a website.  The topic can be anything you want, but- the site must be a business that makes money or an organization that relies on supporters.
+
+The site must meet the following criteria (note that one item in the project can meet several criteria):
+
+at least 7 pages
+external andinternal style sheet
+fixed page elements (navigation/header/footer) as appropriate per page
+consistent look and feel across all pages
+incorporates Javascript and jQuery
+include a jQuery "special effect" (animation, fade, etc)
+includes a form
+at least one page must have multiple columns
+responsive and mobile friendly - must pass this test: https://search.google.com/test/mobile-friendly (Links to an external site.)
+works online
+no broken links
+no "lorum ipsum" content
+Deliverables:  
+
+[NOTE -  the project should be submitted by only one team member]
+
+Document containing the following:
+
+Group name
+URL of the site online
+What does the business or organization do and how the website will help them.
+The section of code you are most proud of including an explanation of why you picked it and how it works.  It can be anything from 2 lines to 50 lines of code.
+List each project requirement and how/where it was met
+How did each team member contributed to the project

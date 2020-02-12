@@ -1,0 +1,27 @@
+Assignment: Joe’s Hotdogs
+
+NOTE THE DUE DATE!
+
+Your assignment is to create a web page to get an order for a new café called “Joe’s Hotdog Stand”.
+
+Joe’s only sells three items: hotdogs ($3.25 each), French Fries ($2.00 each) and Drinks ($1.50 each).  Because of the low prices, Joe is swamped and is hoping online orders will help to manage the flow of customers better so that he can gain more revenue at peak hours.
+
+When the user opens the page (i.e., enters the url) do the following:
+
+1. Ask the user for the quantity of hotdogs, fries and sodas they want.
+
+2. Calculate the subtotal for the order.
+
+3. Implement Joe’s special - 10% discount if the order (before tax) is at least $20
+
+4. Add 6.25% Massachusetts meals tax to all orders
+
+5. Display all order information on the page including:  Items ordered, quantities, subtotal, discount if applicable, tax and total.
+
+ 
+
+Deliverables:
+
+URL of site
+
+PDF file with code (this can include the URL)

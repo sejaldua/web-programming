@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Joe's Hot Dog Stand</title>
+
+
+<script language="JavaScript" type="text/javascript">
+    function calcpayments()
+    {
+        var hotdogs = document.forms[0].hotdogs.value;
+        var fries = document.forms[0].fries.value;
+        var drinks = document.forms[0].drinks.value;
+        document.getElementById("num_hotdogs").innerHTML = hotdogs;
+        document.getElementById("num_fries").innerHTML = fries;
+        document.getElementById("num_drinks").innerHTML = drinks;
+        document.getElementById("price_hotdogs").innerHTML = "$" + (hotdogs * 3.25).toFixed(2);
+        document.getElementById("price_fries").innerHTML = "$" + (fries * 2.00).toFixed(2);
+        document.getElementById("price_drinks").innerHTML = "$" + (drinks * 1.50).toFixed(2);
+
+        var subtotal = (hotdogs * 3.25) + (fries * 2.00) + (drinks * 1.50);
+        var discount = 0;
+        document.getElementById("subtotal").innerHTML = subtotal;
+
+        // Joe's Special: 10% off for orders of $20 or more
+        if (subtotal >= 20) {
+			document.getElementById("message").innerHTML = "You've received Joe's Special!";
+            discount =  0.1 * subtotal;
+        }
+        var tax = 1.0625;
+        var total = (subtotal - discount) * tax;
+    }
+    
+
+</script>
+</head>
+
+<body>
+
+<div align="left">
+<div id="calclpayment">
+        <form>
+        <br><b>What would you like to order?</b><br>
+            <table width="100%" align="left">
+                <tr>
+                    <td><div align="left">Hot Dog</div></td>
+                    <td><input type= "text" name="hotdogs" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div align="left">French Fries</div></td>
+                    <td><input type="text" name="fries"/></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><div align="left">Drink</div></td>
+                    <td><input type="text" name="drinks" /></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input name="Input" type="button" value="Calculate payments" onclick="calcpayments()"/></td>
+                    <!-- <td><input name="reset2" type="reset" value="Clear" /></td> -->
+                </tr>
+          </table>
+   <br />
+   <hr>
+
+   <table>
+       <tr>
+           <td><div align="left">Hot Dog</div></td>
+           <td><div align="left"> &nbsp; x &nbsp; </div></td>
+           <td><div id="num_hotdogs" align="right"></div></td>
+           <td><div id="price_hotdogs" style="padding-left: 10px" align="right"></div></td>
+       </tr>
+       <tr>
+            <td><div align="left">French Fries</div></td>
+            <td><div align="left"> &nbsp; x &nbsp; </div></td>
+            <td><div id="num_fries" align="right"></div></td>
+            <td><div id="price_fries" style="padding-left: 10px" align="right"></div></td>
+        </tr>
+        <tr>
+            <td><div align="left">Drink</div></td>
+            <td><div align="left"> &nbsp; x &nbsp; </div></td>
+            <td><div id="num_drinks" align="right"></div></td>
+            <td><div id="price_drinks" style="padding-left: 10px" align="right"></div></td>
+        </tr>
+   </table>
+  <b>Your subtotal is :</b>  <br />
+  <br />
+<div id="subtotal" style="font-size: 25px;background-color:#333; 
+font-weight: bold; width: 100px; padding: 5px; color:#FFF;" > 0  </div>
+      </form>
+
+</body>
+</html>

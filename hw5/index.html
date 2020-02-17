@@ -19,15 +19,30 @@
 
         var subtotal = (hotdogs * 3.25) + (fries * 2.00) + (drinks * 1.50);
         var discount = 0;
-        document.getElementById("subtotal").innerHTML = subtotal;
+        document.getElementById("subtotal").innerHTML = "$" + subtotal.toFixed(2);
 
         // Joe's Special: 10% off for orders of $20 or more
         if (subtotal >= 20) {
-			document.getElementById("message").innerHTML = "You've received Joe's Special!";
+            document.getElementById("message1").innerHTML = "You've received Joe's Special!";
+            document.getElementById("message2").innerHTML = "10% off for orders of $20 or more";
             discount =  0.1 * subtotal;
+            document.getElementById("discount").innerHTML = "- 10%";
+            document.getElementById("deduction").innerHTML = "- $" + discount.toFixed(2);
         }
-        var tax = 1.0625;
-        var total = (subtotal - discount) * tax;
+        else {
+            document.getElementById("message1").innerHTML = "";
+            document.getElementById("message2").innerHTML = "";
+            document.getElementById("discount").innerHTML = "0%";
+            document.getElementById("deduction").innerHTML = "- $0.00";
+        }
+        subtotal = subtotal - discount;
+
+        // Massachusett's Tax
+        var tax = .0625 * subtotal;
+        document.getElementById("tax_pct").innerHTML = "6.25%";
+        document.getElementById("tax_cost").innerHTML = "$" + tax.toFixed(2);
+        var total = subtotal + tax;
+        document.getElementById("total").innerHTML = "$" + total.toFixed(2);
     }
     
 
@@ -58,37 +73,60 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input name="Input" type="button" value="Calculate payments" onclick="calcpayments()"/></td>
+                    <td><input name="Input" type="button" value="View Receipt" onclick="calcpayments()"/></td>
                     <!-- <td><input name="reset2" type="reset" value="Clear" /></td> -->
                 </tr>
           </table>
+          <div id="message1" align="left"></div>
+          <div id="message2" align="left"></div>
    <br />
    <hr>
 
    <table>
-       <tr>
+        <tr">
+            <td><div align="left">Item</div></td>
+            <td><div style="padding-left: 10px" align="right">Quantity</div></td>
+            <td><div style="padding-left: 10px" align="right">Value</div></td>
+        </tr>
+        <tr style="color: #C66D4F; font-weight: bold;">
            <td><div align="left">Hot Dog</div></td>
-           <td><div align="left"> &nbsp; x &nbsp; </div></td>
            <td><div id="num_hotdogs" align="right"></div></td>
            <td><div id="price_hotdogs" style="padding-left: 10px" align="right"></div></td>
-       </tr>
-       <tr>
+        </tr>
+        <tr style="color: #967507; font-weight: bold;">
             <td><div align="left">French Fries</div></td>
-            <td><div align="left"> &nbsp; x &nbsp; </div></td>
             <td><div id="num_fries" align="right"></div></td>
             <td><div id="price_fries" style="padding-left: 10px" align="right"></div></td>
         </tr>
-        <tr>
+        <tr style="color: #6D1605; font-weight: bold;">
             <td><div align="left">Drink</div></td>
-            <td><div align="left"> &nbsp; x &nbsp; </div></td>
             <td><div id="num_drinks" align="right"></div></td>
             <td><div id="price_drinks" style="padding-left: 10px" align="right"></div></td>
         </tr>
+        <tr style="font-weight: bold;">
+            <td><div align="left">SUBTOTAL</div></td>
+            <td></td>
+            <td><div id="subtotal" style="padding-left: 10px" align="right"></div></td>
+        </tr>
+        <tr style="font-weight: bold;">
+            <td><div align="left">DISCOUNT</div></td>
+            <td><div id="discount" align="right"></div></td>
+            <td><div id="deduction" align="right"></div></td>
+        </tr>
+        <tr style="font-weight: bold;">
+            <td><div align="left">TAX</div></td>
+            <td><div id="tax_pct" align="right"></div></td>
+            <td><div id="tax_cost" align="right"></div></td>
+        </tr>
+        <tr style="font-weight: bold;">
+            <td><div align="left">TOTAL</div></td>
+            <td></td>
+            <td>
+                <div id="total" style="font-size: 20px;background-color:#333; 
+                font-weight: bold; width: 100px; padding: 5px; border-radius: 4px; color:#FFF;" align="right"> $0.00</div>
+            </td>
+        </tr>
    </table>
-  <b>Your subtotal is :</b>  <br />
-  <br />
-<div id="subtotal" style="font-size: 25px;background-color:#333; 
-font-weight: bold; width: 100px; padding: 5px; color:#FFF;" > 0  </div>
       </form>
 
 </body>

@@ -1,0 +1,55 @@
+Part 1: Quick Pick
+
+Use Math.random() to do a “quick pick” for a Mass Lottery “Lucky for Life” game.  For the game, you need 5 numbers from 1 to 48. Plus, one Lucky Ball number from 1 to 18.
+
+https://www.masslottery.com/games/lottery/lucky-for-life.html (Links to an external site.) (Links to an external site.)
+
+Get the 6 random numbers and store them in an array.
+Display the numbers using the array and a loop.
+Sort the numbers in the array.
+Display again.
+Now create a payout calculator for a given drawing as follows:
+- Create a form with a button and two text boxes.  One text box is for a user to enter 5 numbers separated by spaces plus a second text box for the “Lucky Ball” number.
+
+- When the button is pressed, read the data and compare with your pick (the numbers in the array) and determine the winning payout of your pick. You will need to figure out the best way to parse the data and do the comparison.
+
+Here are the payout amounts:
+
+Match               Probability         Top Prize
+5 + Lucky Ball      1 in 30,821,472     $7,000 a WEEK for LIFE!
+5                   1 in 1,813,027      $25,000 a YEAR for LIFE!
+4 + Lucky Ball      1 in 143,355        $5,000
+4                   1 in 8,432          $200
+3 + Lucky Ball      1 in 3,413          $150
+3                   1 in 200            $20
+2 + Lucky Ball      1 in 249            $25
+2                   1 in 14             $3
+1 + Lucky Ball      1 in 49             $6
+0 + Lucky Ball      1 in 32             $4
+
+You may make up test data or get the data from a recent drawing.
+
+Have fun!
+
+ 
+Part 2:  Amicable Numbers
+
+A factor is a number that divides evenly into another number.  A pair of numbers are called amicable if their factors (excluding themselves) add up to each other.
+
+For example, the numbers 220 and 284 are amicable, because the factors of 220 are [1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110] and sum to 284,while the factors of 284 are [1, 2, 4, 71, 142] and sum to 220.
+
+This lab will walk you through writing a program to check if two numbers are amicable.
+
+Create a file with a form to enter two numbers. The form should also have a button.  When the button is clicked – you will read the numbers and report whether they are amicable.  Your first step is to set it such that when the button is clicked, call a function that reads and displays the numbers.
+Create a function called isFactor that takes two input parameters: a number and a test number.  The function should return true if the test number divides evenly into the number (in other words it is a factor of the number).  Create some test code to test the function.
+Comment out the test code.
+Create a function called showFactors that takes an array as a parameter and displays all of its items. Create some test code to test the function.
+Comment out the test code.
+Create a function called addFactors that takes an array as a parameter and returns the sum of all of the elements . Test the function and then comment out the test code.
+Create a function called getFactors that takes a number as a parameter and returns an array with all possible factors. Test the function and then comment out the test code.
+Now create an event handler that reads the numbers from the form when the button is clicked and uses the functions you created to determine whether the numbers are amicable. Display the result.
+Deliverables:
+
+URL of site
+PDF file with code
+Document with answers to question:  What is your opinion of Javascript as a programming language?

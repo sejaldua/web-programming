@@ -9,17 +9,38 @@
 
     <fieldset>
       <legend><span class="number">1</span> Your numbers</legend>
-      <legend style="text-align: center;"><input class="ball" id="one">
-              <input class="ball" id="two">
-              <input class="ball" id="three">
-              <input class="ball" id="four">
-              <input class="ball" id="five">
+      <legend style="text-align: center;">
+        <button type="button" style="max-width: 40%; padding: 8px; margin-right: 10px;text-align: center; font-size: 10px;" onclick="generate_lotto_numbers(numbers)">Get Lotto Numbers</button>
+        <input class="ball" id="orig1" value="">
+        <input class="ball" id="orig2" value="">
+        <input class="ball" id="orig3" value="">
+        <input class="ball" id="orig4" value="">
+        <input class="ball" id="orig5" value="">
+      </legend>
+      <legend style="text-align: center;">
+        <button type="button" style="max-width: 40%; padding: 8px; margin-right: 10px;text-align: center; font-size: 10px;" onclick="sort_lotto_numbers(sorted)">Sort Lotto Numbers</button>
+        <input class="ball" id="sorted1" value="">
+        <input class="ball" id="sorted2" value="">
+        <input class="ball" id="sorted3" value="">
+        <input class="ball" id="sorted4" value="">
+        <input class="ball" id="sorted5" value="">
       </legend>
       <script>
-        numbers = new Array(1, 2, 3, 4, 5);
-        ids = ["one", "two", "three", "four", "five"];
-        for (i = 0; i < numbers.length; i++)
-          document.getElementById(ids[i]).value = numbers[i];
+        var numbers = new Array(4, 1, 5, 3, 2);
+        function generate_lotto_numbers(numbers)
+        {
+          for (i = 0; i < numbers.length; i++) {
+            document.getElementById("orig" + (i + 1)).value = numbers[i];
+          }
+        }
+        var sorted = numbers.slice();
+        function sort_lotto_numbers(sorted)
+        {
+          sorted.sort()
+          for (i = 0; i < sorted.length; i++) {
+            document.getElementById("sorted" + (i + 1)).value = sorted[i];
+          }
+        }
       </script>
     </fieldset>
   

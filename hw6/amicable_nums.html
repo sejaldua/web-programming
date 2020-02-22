@@ -40,13 +40,46 @@
 
     var test1 = isFactor(24, 8);
     var test2 = isFactor(12, 7);
-    console.log("num: 24, test_num: 8, isFactor: " + test1);
-    console.log("num: 12, test_num: 7, isFactor: " + test2);
+    var test3 = isFactor(13, 0);
+    console.log("isFactor(24, 8): " + test1);
+    console.log("isFactor(12, 7): " + test2);
+    console.log("isFactor(13, 0): " + test2);
     
-    // function showFactors(arr)
-    // {
+    function showFactors(arr)
+    {
+      arr.forEach(function(item) {
+        document.write(item + " ");      
+      });
+    }
+    arr1 = [1, 2, 3, 4, 6, 12];
+    arr2 = [1, 3, 9, 27];
+    arr3 = [1, 2, 4, 71, 142];
 
-    // }
+    function addFactors(arr)
+    {
+      var sum_factors = 0
+      for (i = 0; i < arr.length; i++) {
+        sum_factors += arr[i];
+      }
+      return sum_factors;
+    }
+    console.log("addFactors([" + arr1 + "]): " + addFactors(arr1)); 
+    console.log("addFactors([" + arr2 + "]): " + addFactors(arr2)); 
+    console.log("addFactors([" + arr3 + "]): " + addFactors(arr3)); 
+
+    function getFactors(num)
+    {
+      var arr = new Array();
+      for (i = 1; i <= num; i++) {
+        if (isFactor(num, i))
+          arr.push(i);
+      }
+      return arr
+    }
+
+    console.log("getFactors(28): [" + getFactors(28) + "]"); 
+    console.log("getFactors(24): [" + getFactors(24) + "]"); 
+    console.log("getFactors(284): [" + getFactors(284) + "]"); 
   </script>
   </body>
   </html>

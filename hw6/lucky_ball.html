@@ -82,9 +82,13 @@
       var string_lucky = lottery.lucky.value;
       var user_nums = string_five.split(" ").map(function(elem) { return parseInt(elem, 10); });
       var score = 0;
-      for (i = 0; i < user_nums.length; i++) {
-        if (user_nums[i] == numbers[i])
-          score = score + 1;
+      for (i = 0; i < numbers.length; i++) {
+        for (j = 0; j < user_nums.length; j++) {
+          if (user_nums[j] == numbers[i]) {
+            score = score + 1;
+            break;
+          }
+        }
       }
       if (string_lucky == lucky_ball)
         score = score + 0.5;

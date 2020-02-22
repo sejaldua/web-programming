@@ -42,6 +42,9 @@
   
     <fieldset>
       <legend><span class="number">3</span> Your payout</legend>
+      <input class="field" id="match">
+      <input class="field" id="probability">
+      <input class="field" id="payout">
     </fieldset>
   
 
@@ -50,9 +53,10 @@
   <script>
     var numbers = new Array();
     var numbers_length = 6;
-    var rand_number;
+    var rand_number, upper_limit;
     while (numbers.length < numbers_length) {
-      rand_number = Math.floor(Math.random() * 48) + 1;
+      upper_limit = (numbers.length == numbers_length - 1) ? 18 : 48;
+      rand_number = Math.floor(Math.random() * upper_limit) + 1;
       if(numbers.indexOf(rand_number) === -1) numbers.push(rand_number);
     }
     function display_lotto_numbers()
@@ -84,7 +88,66 @@
       }
       if (string_lucky == lucky_ball)
         score = score + 0.5;
-      console.log(score);
+      switch(score)
+      {
+        case 0.5: 
+          console.log("lucky ball");
+          document.getElementById("match").value = "Match: 0 + Lucky Ball";
+          document.getElementById("probability").value = "Probability: 1 in 32";
+          document.getElementById("payout").value = "Top Prize: $4";
+          break;
+        case 1.5: 
+          document.getElementById("match").value = "Match: 1 + Lucky Ball";
+          document.getElementById("probability").value = "Probability: 1 in 49";
+          document.getElementById("payout").value = "Top Prize: $6";
+          break;
+        case 2: 
+          document.getElementById("match").value = "Match: 2";
+          document.getElementById("probability").value = "Probability: 1 in 14";
+          document.getElementById("payout").value = "Top Prize: $3";
+          break;
+        case 2.5: 
+          document.getElementById("match").value = "Match: 2 + Lucky Ball";
+          document.getElementById("probability").value = "Probability: 1 in 249";
+          document.getElementById("payout").value = "Top Prize: $25";
+          break;
+        case 3: 
+          document.getElementById("match").value = "Match: 3";
+          document.getElementById("probability").value = "Probability: 1 in 200";
+          document.getElementById("payout").value = "Top Prize: $20";
+          break;
+        case 3.5: 
+          document.getElementById("match").value = "Match: 3 + Lucky Ball";
+          document.getElementById("probability").value = "Probability: 1 in 3,413";
+          document.getElementById("payout").value = "Top Prize: $150";
+          break;
+        case 4: 
+          document.getElementById("match").value = "Match: 4";
+          document.getElementById("probability").value = "Probability: 1 in $8,432";
+          document.getElementById("payout").value = "Top Prize: $200";
+          break;
+        case 4.5: 
+          document.getElementById("match").value = "Match: 4 + Lucky Ball";
+          document.getElementById("probability").value = "Probability: 1 in 143,355";
+          document.getElementById("payout").value = "Top Prize: $5,000";
+          break;
+        case 5: 
+          document.getElementById("match").value = "Match: 5";
+          document.getElementById("probability").value = "Probability: 1 in 1,813,027";
+          document.getElementById("payout").value = "Top Prize: $25,000 a YEAR for LIFE!";
+          break;
+        case 5.5: 
+          document.getElementById("match").value = "Match: 5 + Lucky Ball";
+          document.getElementById("probability").value = "Probability: 1 in 30,821,472";
+          document.getElementById("payout").value = "Top Prize: $7,000 a WEEK for LIFE!";
+          break;
+        default: 
+          console.log("default");
+          document.getElementById("match").value = "Sorry. You did not win a prize.";
+          document.getElementById("probability").value = "NOTE: lottery games are based on chance";
+          document.getElementById("payout").value = "and should be played for entertainment only";
+          break;
+      }
     }
   </script>
   </html>

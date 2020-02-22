@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+  <form id="amicable">
+
+    <h1>Amicable Numbers</h1>
+
+  
+    <fieldset>
+      <label for="num1">Number 1</label>
+      <input type="number" style="width: 50%; margin: 5px; padding: 8px;" id="num1">
+      <label for="num2">Number 2</label>
+      <input type="number" style="width: 50%; margin: 5px; padding: 8px;" id="num2">
+
+      <button type="button" style="max-width: 50%; padding: 8px; margin: 5px 0px; text-align: center; font-size: 9px;"onclick="amicable_numbers()">Submit</button>
+    </fieldset>
+  
+    <fieldset>
+      <legend> Result</legend>
+      <input class="field" id="result">
+    </fieldset>
+  
+
+  
+  </form>
+  <script>
+    function amicable_numbers()
+    {
+      console.log(amicable.num1.value);
+      console.log(amicable.num2.value);
+    }
+
+    function isFactor(num, test_num)
+    {
+      return num % test_num == 0 ? true : false;
+    }
+
+    var test1 = isFactor(24, 8);
+    var test2 = isFactor(12, 7);
+    console.log("num: 24, test_num: 8, isFactor: " + test1);
+    console.log("num: 12, test_num: 7, isFactor: " + test2);
+    
+    // function showFactors(arr)
+    // {
+
+    // }
+  </script>
+  </body>
+  </html>

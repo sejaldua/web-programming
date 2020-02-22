@@ -85,13 +85,13 @@
       for (i = 0; i < numbers.length; i++) {
         for (j = 0; j < user_nums.length; j++) {
           if (user_nums[j] == numbers[i]) {
-            score = score + 1;
+            score += 1;
             break;
           }
         }
       }
       if (string_lucky == lucky_ball)
-        score = score + 0.5;
+        score += 0.5;
       switch(score)
       {
         case 0.5: 

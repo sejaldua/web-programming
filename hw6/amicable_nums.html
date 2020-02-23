@@ -10,27 +10,58 @@
 
   
     <fieldset>
-      <label for="num1">Number 1</label>
+      <label for="num1" style="margin: 5px 5px;">Number 1</label>
       <input type="number" style="width: 50%; margin: 5px; padding: 8px;" id="num1">
-      <label for="num2">Number 2</label>
+      <label for="num2" style="margin: 5px 5px;">Number 2</label>
       <input type="number" style="width: 50%; margin: 5px; padding: 8px;" id="num2">
 
-      <button type="button" style="max-width: 50%; padding: 8px; margin: 5px 0px; text-align: center; font-size: 9px;"onclick="amicable_numbers()">Submit</button>
+      <button type="button" style="max-width: 50%; padding: 8px; margin: 5px 0px; text-align: center; font-size: 9px;"onclick="amicable_check()">Submit</button>
     </fieldset>
   
     <fieldset>
       <legend> Result</legend>
-      <input class="field" id="result">
+      <input class="field" style="font-size: 12px; text-align: center;" id="result">
+      <input class="field" style="width: 42%; margin: 4px 2px; font-size: 12px; text-align: center;" id="factors_1">
+      <input class="field" style="width: 5%; margin: 4px 2px; font-size: 12px; padding: 0px; text-align: center;" id="equals_1">
+      <input class="field" style="width: 42%; margin: 4px 2px; font-size: 12px; text-align: center;" id="factors_2">
+      <input class="field" style="width: 42%; margin: 4px 2px; font-size: 12px; text-align: center;" id="sum_1">
+      <input class="field" style="width: 5%; margin: 4px 2px; font-size: 12px; padding: 0px; text-align: center;" id="equals_2">
+      <input class="field" style="width: 42%; margin: 4px 2px; font-size: 12px; text-align: center;" id="sum_2">
     </fieldset>
   
 
   
   </form>
   <script>
-    function amicable_numbers()
+
+    //event handler
+    function amicable_check()
     {
-      console.log(amicable.num1.value);
-      console.log(amicable.num2.value);
+      var num1, num2, factors1, factors2, sum1, sum2;
+
+      num1 = amicable.num1.value;
+      factors1 = getFactors(num1);
+      sum1 = addFactors(factors1);
+
+      num2 = amicable.num2.value;
+      factors2 = getFactors(num2);
+      sum2 = addFactors(factors2);
+      console.log(num1, num2, sum1, sum2);
+
+      var equals = ((num1 == sum2) && (num2 == sum1)) ? true : false;
+      if (equals)
+        document.getElementById("result").value = num1 + " and " + num2 + " are amicable";
+      else
+        document.getElementById("result").value = num1 + " and " + num2 + " are NOT amicable";
+
+      // display information to form for the user
+      document.getElementById("factors_1").value = showFactors(factors1);
+      document.getElementById("factors_2").value = showFactors(factors2);
+      document.getElementById("sum_1").value = sum1;
+      document.getElementById("sum_2").value = sum2;
+      document.getElementById("equals_1").value = equals ? "=" : "!=";
+      document.getElementById("equals_2").value = equals ? "=" : "!=";
+
     }
 
     function isFactor(num, test_num)
@@ -47,13 +78,20 @@
     
     function showFactors(arr)
     {
-      arr.forEach(function(item) {
-        document.write(item + " ");      
+      var string = "[";
+      arr.forEach(function(item, index) {
+        if (index < arr.length - 1)
+          string += item + ", ";
+        else
+          string += item
       });
+      string += "]";
+      return string;
     }
     arr1 = [1, 2, 3, 4, 6, 12];
     arr2 = [1, 3, 9, 27];
     arr3 = [1, 2, 4, 71, 142];
+    // console.log("showFactors([" + arr1 + "]): " + showFactors(arr1));
 
     function addFactors(arr)
     {
@@ -70,7 +108,7 @@
     function getFactors(num)
     {
       var arr = new Array();
-      for (i = 1; i <= num; i++) {
+      for (i = 1; i < num; i++) {
         if (isFactor(num, i))
           arr.push(i);
       }

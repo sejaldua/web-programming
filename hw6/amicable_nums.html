@@ -30,10 +30,10 @@
       <input class="field" style="width: 5%; margin: 4px 2px; font-size: 12px; padding: 0px; text-align: center;" id="equals_2" disabled>
       <input class="field" style="width: 40%; margin: 4px 0px; font-size: 12px; text-align: center;" id="sum_2" disabled>
     </fieldset>
-  
-
-  
   </form>
+  <div id="test_factors">
+    Test Array: 
+  </div>
   <script>
 
     //event handler
@@ -78,7 +78,7 @@
     console.log("isFactor(12, 7): " + test2);
     console.log("isFactor(13, 0): " + test2);
     
-    function showFactors(arr)
+    function stringFactors(arr)
     {
       var string = "[";
       arr.forEach(function(item, index) {
@@ -93,7 +93,15 @@
     arr1 = [1, 2, 3, 4, 6, 12];
     arr2 = [1, 3, 9, 27];
     arr3 = [1, 2, 4, 71, 142];
-    // console.log("showFactors([" + arr1 + "]): " + showFactors(arr1));
+    console.log("stringFactors([" + arr1 + "]): " + showFactors(arr1));
+    console.log("stringFactors([" + arr2 + "]): " + showFactors(arr2));
+    console.log("stringFactors([" + arr3 + "]): " + showFactors(arr3));
+
+    function showFactors(arr)
+    {
+      document.getElementById("test_factors").innerHTML = arr;
+    }
+    // showFactors(arr1);
 
     function addFactors(arr)
     {

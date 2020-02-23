@@ -3,14 +3,15 @@
   <head>
     <link rel="stylesheet" href="main.css">
   </head>
-  <form id="lottery">
+  <body style="text-align: center;">
+  <form id="lottery" style="text-align: left;">
 
     <h1>Mass Lottery "Lucky For Life"</h1>
 
     <fieldset>
       <legend><span class="number">1</span> Your numbers</legend>
-      <legend style="text-align: center;">
-        <button type="button" style="max-width: 30%; padding: 8px; margin-right: 10px;text-align: center; font-size: 9px;" onclick="display_lotto_numbers()">Get Lotto Numbers</button>
+      <legend>
+        <button type="button" style="max-width: 30%; padding: 8px; margin-right: 10px; font-size: 9px;" onclick="display_lotto_numbers()">Get Lotto Numbers</button>
         <input class="ball" id="orig1" value="">
         <input class="ball" id="orig2" value="">
         <input class="ball" id="orig3" value="">
@@ -18,8 +19,8 @@
         <input class="ball" id="orig5" value="">
         <input class="ball" id="orig6" value="">
       </legend>
-      <legend style="text-align: center;">
-        <button type="button" style="max-width: 30%; padding: 8px; margin-right: 10px;text-align: center; font-size: 9px;" onclick="display_sorted_numbers()">Sort Lotto Numbers</button>
+      <legend>
+        <button type="button" style="max-width: 30%; padding: 8px; margin-right: 10px; font-size: 9px;" onclick="display_sorted_numbers()">Sort Lotto Numbers</button>
         <input class="ball" id="sorted1" value="">
         <input class="ball" id="sorted2" value="">
         <input class="ball" id="sorted3" value="">
@@ -154,4 +155,5 @@
       }
     }
   </script>
+  </body>
   </html>

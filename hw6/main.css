@@ -13,9 +13,9 @@ body {
 }
 
 form {
-  max-width: 300px;
-  margin: 10px auto;
-  padding: 10px 20px;
+  max-width: 500px;
+  margin: 5px 5px;
+  padding: 5px 10px;
   background: #f4f7f8;
   border-radius: 8px;
   display: inline-block;
@@ -88,8 +88,8 @@ label.light {
 .number {
   background-color: #5fcf80;
   color: #fff;
-  height: 30px;
-  width: 30px;
+  height: 8%;
+  width: 8%;
   display: inline-block;
   font-size: 0.8em;
   margin-right: 4px;
@@ -102,8 +102,8 @@ label.light {
 .ball {
     background-color: #e4260d;
     color: #fff;
-    height: 30px;
-    width: 30px;
+    height: 8%;
+    width: 8%;
     display: inline-block;
     font-size: 0.8em;
     margin-right: 2px;

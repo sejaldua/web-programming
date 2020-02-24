@@ -39,22 +39,25 @@
     {
       var num1, num2, factors1, factors2, sum1, sum2;
 
+      /* get factors and sums for num1 */
       num1 = amicable.num1.value;
       factors1 = getFactors(num1);
       sum1 = addFactors(factors1);
 
+      /* get factors and sums for num2 */
       num2 = amicable.num2.value;
       factors2 = getFactors(num2);
       sum2 = addFactors(factors2);
       console.log(num1, num2, sum1, sum2);
 
+      /* check if amicable */
       var equals = ((num1 == sum2) && (num2 == sum1)) ? true : false;
       if (equals)
         document.getElementById("result").value = num1 + " and " + num2 + " are amicable";
       else
         document.getElementById("result").value = num1 + " and " + num2 + " are NOT amicable";
 
-      // display information to form for the user
+      /* display information to form for the user */
       document.getElementById("factors_1").value = stringFactors(factors1);
       document.getElementById("factors_2").value = stringFactors(factors2);
       document.getElementById("sum_1").value = sum1;
@@ -64,6 +67,11 @@
 
     }
 
+    /* function: isFactor
+     * parameters: a number and a test number
+     * return: boolean value
+     * purpose: check if the test number divides evenly into the number (in other words, it is a factor of the number)
+     */
     function isFactor(num, test_num)
     {
       return num % test_num == 0 ? true : false;
@@ -80,6 +88,12 @@
     // console.log("isFactor(13, 0): " + test3);
     // console.log(isFactor(13, 0) == false ? "WORKS" : "BROKEN");
     
+
+    /* function: stringFactors
+     * parameters: array of factors
+     * return: string
+     * purpose: nicely put together an array string to display the factors of a given number in the HTML
+     */
     function stringFactors(arr)
     {
       var string = "[";
@@ -101,6 +115,12 @@
     // console.log("stringFactors([" + arr2 + "]): " + stringFactors(arr2));
     // console.log("stringFactors([" + arr3 + "]): " + stringFactors(arr3));
 
+
+    /* function: showFactors
+     * parameters: array of factors, id representing the div where the inner HTML will be written
+     * return: none
+     * purpose: display all items of input array somewhere in the HTML
+     */
     function showFactors(arr, div_id)
     {
       arr.forEach(function(item)
@@ -112,6 +132,12 @@
     // showFactors(arr1, "test_factors1");
     // showFactors(arr2, "test_factors2");
 
+
+    /* function: addFactors
+     * parameters: array of factors
+     * return: integer sum
+     * purpose: sums all the factors
+     */
     function addFactors(arr)
     {
       var sum_factors = 0
@@ -128,6 +154,12 @@
     // console.log("addFactors([" + arr3 + "]): " + addFactors(arr3)); 
     // console.log(addFactors(arr3) == 220 ? "WORKS" : "BROKEN");
 
+    
+    /* function: getFactors
+     * parameters: integer
+     * return: array of factors
+     * purpose: uses helper function isFactor to get all the factors of the given number
+     */
     function getFactors(num)
     {
       var arr = new Array();

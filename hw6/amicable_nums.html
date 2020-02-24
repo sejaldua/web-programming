@@ -11,7 +11,6 @@
     <h1 style="margin-bottom: 2px;">Amicable Numbers</h1>
     <p style="margin-right: 5px; margin-left: 5px;">A pair of numbers are called amicable if their factors (excluding themselves) add up to each other.</p>
 
-  
     <fieldset>
       <label for="num1" style="margin: 5px 5px;">Number 1</label>
       <input type="number" style="width: 50%; margin: 5px; text-align: center; padding: 8px;" id="num1">
@@ -31,9 +30,8 @@
       <input class="field" style="width: 40%; margin: 4px 0px; font-size: 12px; text-align: center;" id="sum_2" disabled>
     </fieldset>
   </form>
-  <div id="test_factors">
-    Test Array: 
-  </div>
+  <div id="test_factors1"></div>
+  <div id="test_factors2"></div>
   <script>
 
     //event handler
@@ -70,13 +68,17 @@
     {
       return num % test_num == 0 ? true : false;
     }
-
-    var test1 = isFactor(24, 8);
-    var test2 = isFactor(12, 7);
-    var test3 = isFactor(13, 0);
-    console.log("isFactor(24, 8): " + test1);
-    console.log("isFactor(12, 7): " + test2);
-    console.log("isFactor(13, 0): " + test2);
+    var test1, test2, test3;
+    test1 = isFactor(24, 8);
+    test2 = isFactor(12, 7);
+    test3 = isFactor(13, 0);
+    /* TEST isFactor */
+    // console.log("isFactor(24, 8): " + test1);
+    // console.log(isFactor(24, 8) == true ? "WORKS" : "BROKEN");
+    // console.log("isFactor(12, 7): " + test2);
+    // console.log(isFactor(12, 7) == false ? "WORKS" : "BROKEN");
+    // console.log("isFactor(13, 0): " + test3);
+    // console.log(isFactor(13, 0) == false ? "WORKS" : "BROKEN");
     
     function stringFactors(arr)
     {
@@ -90,21 +92,25 @@
       string += "]";
       return string;
     }
+    var arr1, arr2, arr3;
     arr1 = [1, 2, 3, 4, 6, 12];
     arr2 = [1, 3, 9, 27];
     arr3 = [1, 2, 4, 71, 142];
-    console.log("stringFactors([" + arr1 + "]): " + stringFactors(arr1));
-    console.log("stringFactors([" + arr2 + "]): " + stringFactors(arr2));
-    console.log("stringFactors([" + arr3 + "]): " + stringFactors(arr3));
+    /* TEST stringFactors */
+    // console.log("stringFactors([" + arr1 + "]): " + stringFactors(arr1));
+    // console.log("stringFactors([" + arr2 + "]): " + stringFactors(arr2));
+    // console.log("stringFactors([" + arr3 + "]): " + stringFactors(arr3));
 
-    function showFactors(arr)
+    function showFactors(arr, div_id)
     {
       arr.forEach(function(item)
       {
-        document.getElementById("test_factors").innerHTML += item + " ";
+        document.getElementById(div_id).innerHTML += item + " ";
       });
     }
-    // showFactors(arr1);
+    /* TEST showFactors */
+    // showFactors(arr1, "test_factors1");
+    // showFactors(arr2, "test_factors2");
 
     function addFactors(arr)
     {
@@ -114,9 +120,13 @@
       }
       return sum_factors;
     }
-    console.log("addFactors([" + arr1 + "]): " + addFactors(arr1)); 
-    console.log("addFactors([" + arr2 + "]): " + addFactors(arr2)); 
-    console.log("addFactors([" + arr3 + "]): " + addFactors(arr3)); 
+    /* TEST addFactors */
+    // console.log("addFactors([" + arr1 + "]): " + addFactors(arr1)); 
+    // console.log(addFactors(arr1) == 28 ? "WORKS" : "BROKEN");
+    // console.log("addFactors([" + arr2 + "]): " + addFactors(arr2)); 
+    // console.log(addFactors(arr2) == 40 ? "WORKS" : "BROKEN");
+    // console.log("addFactors([" + arr3 + "]): " + addFactors(arr3)); 
+    // console.log(addFactors(arr3) == 220 ? "WORKS" : "BROKEN");
 
     function getFactors(num)
     {
@@ -127,10 +137,10 @@
       }
       return arr
     }
-
-    console.log("getFactors(28): [" + getFactors(28) + "]"); 
-    console.log("getFactors(24): [" + getFactors(24) + "]"); 
-    console.log("getFactors(284): [" + getFactors(284) + "]"); 
+    /* TEST getFactors */
+    // console.log("getFactors(28): [" + getFactors(28) + "]");
+    // console.log("getFactors(24): [" + getFactors(24) + "]"); 
+    // console.log("getFactors(284): [" + getFactors(284) + "]"); 
   </script>
   </body>
   </html>

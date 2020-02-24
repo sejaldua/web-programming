@@ -63,19 +63,22 @@
     }
     function display_lotto_numbers()
     {
+      console.log(numbers);
       for (i = 0; i < numbers.length; i++) {
         document.getElementById("orig" + (i + 1)).value = numbers[i];
       }
     }
-    var lucky_ball = numbers[5];
 
-    var sorted = numbers.slice();
+    var lucky_ball = numbers[5];
+    var sorted = numbers.slice(0, 5);
     sorted.sort(function(a, b){return a-b});
+    sorted.push(lucky_ball)
     function display_sorted_numbers()
     {
       for (i = 0; i < sorted.length; i++) {
         document.getElementById("sorted" + (i + 1)).value = sorted[i];
       }
+
     }
 
     function parse_selections()

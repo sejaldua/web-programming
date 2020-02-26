@@ -107,7 +107,7 @@ label.light {
 
 .ball {
     background-color: #e4260d;
-    color: #fff;
+    color: #fff!important;
     width: 32px;
     height: width;
     display: inline-block;
@@ -142,7 +142,7 @@ label.light {
 @media screen and (max-width: 480px) {
   .ball{
     background-color: #e4260d;
-    color: #fff;
+    color: #fff!important;
     height: auto;
     width: 25px;
     height: width;

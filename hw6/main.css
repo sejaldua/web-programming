@@ -136,8 +136,8 @@ label.light {
 
 @media screen and (max-width: 480px) {
   .ball{
-    width: 15px;
-    height: width;
+    width: 30px;
+    height: 20px;
     font-size: 7px;
   }
 }

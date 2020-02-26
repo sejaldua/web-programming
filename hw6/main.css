@@ -136,9 +136,17 @@ label.light {
 
 @media screen and (max-width: 480px) {
   .ball{
-    width: 20px;
-    height: 30px;
-    font-size: 7px;
+    background-color: #e4260d;
     color: #fff;
+    height: auto;
+    width: 30px;
+    height: width;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 80%;
   }
 }

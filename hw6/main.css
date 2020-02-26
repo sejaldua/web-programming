@@ -111,7 +111,7 @@ label.light {
     width: 32px;
     height: width;
     display: inline-block;
-    font-size: 8px;
+    font-size: 0.8em;
     margin-right: 2px;
     line-height: 30px;
     text-align: center;
@@ -147,7 +147,7 @@ label.light {
     width: 30px;
     height: width;
     display: inline-block;
-    font-size: 0.8em;
+    font-size: 8px;
     margin-right: 2px;
     line-height: 30px;
     text-align: center;

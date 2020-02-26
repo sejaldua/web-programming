@@ -130,8 +130,8 @@ label.light {
   outline: 0;
   padding: 5px 15px;
   width: 100%;
-  background-color: #e8eeef;
-  color: #8a97a0;
+  background-color: #bdc0c0;
+  color: #fcfcfc;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
 }
 
@@ -147,10 +147,9 @@ label.light {
     height: auto;
     display: inline-block;
     font-size: 12px;
-    margin-right: 2px;
-    margin-top: 10px;
+    margin-right: 1px;
     line-height: 30px;
-    width: 25px;
+    width: 28px;
     height: line-height;
     text-align: center;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);

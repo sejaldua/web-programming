@@ -39,7 +39,7 @@ select {
   outline: 0;
   padding: 15px;
   width: 100%;
-  background-color: #8b9091;
+  background-color: #bdc0c0;
   color: #fcfcfc;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
   margin-bottom: 20px;
@@ -47,6 +47,8 @@ select {
 
 input:disabled {
   opacity: 1!important;
+  color: #fcfcfc;
+  background-color: #bdc0c0;
 }
 
 select {

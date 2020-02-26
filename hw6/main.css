@@ -103,8 +103,8 @@ label.light {
 .ball {
     background-color: #e4260d;
     color: #fff;
-    width: 8%;
-    height: auto;
+    width: 35px;
+    height: width;
     display: inline-block;
     font-size: 0.8em;
     margin-right: 2px;
@@ -131,5 +131,13 @@ label.light {
 @media screen and (min-width: 480px) {
   form {
     max-width: 480px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ball{
+    width: 15px;
+    height: width;
+    font-size: 7px;
   }
 }

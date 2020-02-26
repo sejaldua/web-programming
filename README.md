@@ -30,3 +30,17 @@ Joe’s only sells three items: hotdogs ($3.25 each), French Fries ($2.00 each) 
 
 <img src="images/joes.png" height="500">
 
+### Assignment 6: Javascript Arrays
+#### Part 1: Quick Pick Lottery
+**URL:** https://sejaldua.com/web-programming/hw6/lucky_ball.html  
+**Language(s):** HTML, CSS, Javascript  
+**Description:**  Implement a "quick pick" for a Mass Lottery "Lucky for Life" game. Randomly generate 5 numbers from 1 to 49 plus one lucky ball from 1 to 18. Sort the numbers (excluding the lucky ball) and display them. Allow the user to enter 5 numbers and a lucky ball selection. When a button is pressed, parse the data and compare the user-entered numbers with the randomly generated numbers. Then determine the winning payout of the user's pick.
+
+<img src="images/luckyball.png" height="500">
+
+#### Part 1: Amicable Numbers
+**URL:** https://sejaldua.com/web-programming/hw6/amicable_nums.html  
+**Language(s):** HTML, CSS, Javascript  
+**Description:** A factor is a number that divides evenly into another number.  A pair of numbers are called amicable if their factors (excluding themselves) add up to each other. For example, the numbers 220 and 284 are amicable, because the factors of 220 are [1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110] and sum to 284,while the factors of 284 are [1, 2, 4, 71, 142] and sum to 220. Implement an amicable number checker using Javascript arrays and variables.
+
+<img src="images/amicable.png" height="450">

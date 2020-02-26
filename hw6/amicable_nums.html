@@ -51,20 +51,23 @@
       console.log(num1, num2, sum1, sum2);
 
       /* check if amicable */
-      var equals = ((num1 == sum2) && (num2 == sum1)) ? true : false;
-      if (equals)
-        document.getElementById("result").value = num1 + " and " + num2 + " are amicable";
-      else
-        document.getElementById("result").value = num1 + " and " + num2 + " are NOT amicable";
+      if (num1 == num2)
+        document.getElementById("result").value = num1 + " and " + num2 + " are NOT amicable. They are the same.";
+      else {
+        var equals = ((num1 == sum2) && (num2 == sum1)) ? true : false;
+        if (equals)
+          document.getElementById("result").value = num1 + " and " + num2 + " are amicable";
+        else
+          document.getElementById("result").value = num1 + " and " + num2 + " are NOT amicable";
 
-      /* display information to form for the user */
-      document.getElementById("factors_1").value = stringFactors(factors1);
-      document.getElementById("factors_2").value = stringFactors(factors2);
-      document.getElementById("sum_1").value = sum1;
-      document.getElementById("sum_2").value = sum2;
-      document.getElementById("equals_1").value = equals ? "=" : "!=";
-      document.getElementById("equals_2").value = equals ? "=" : "!=";
-
+        /* display information to form for the user */
+        document.getElementById("factors_1").value = stringFactors(factors1);
+        document.getElementById("factors_2").value = stringFactors(factors2);
+        document.getElementById("sum_1").value = sum1;
+        document.getElementById("sum_2").value = sum2;
+        document.getElementById("equals_1").value = equals ? "=" : "!=";
+        document.getElementById("equals_2").value = equals ? "=" : "!=";
+      }
     }
 
     /* function: isFactor
@@ -154,7 +157,7 @@
     // console.log("addFactors([" + arr3 + "]): " + addFactors(arr3)); 
     // console.log(addFactors(arr3) == 220 ? "WORKS" : "BROKEN");
 
-    
+
     /* function: getFactors
      * parameters: integer
      * return: array of factors

@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Jade Delight</title>
+<link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -25,16 +26,16 @@ menuItems = new Array(
 function makeSelect(name, minRange, maxRange)
 {
 	var t= "";
-	t = "<select name='" + name + "' size='1'>";
+	t = "<select name='" + name + "' size='1' onchange='updateTotals()'>";
 	for (j=minRange; j<=maxRange; j++)
-	   t += "<option>" + j + "</option>";
+	   t += "<option value='" + j + "'>" + j + "</option>";
 	t+= "</select>"; 
 	return t;
 }
 </script>
 
 <h1>Jade Delight</h1>
-<form>
+<form onsubmit="return validate()">
 
 <p>First Name: <input type="text"  name='fname' /></p>
 <p>Last Name*:  <input type="text"  name='lname' /></p>
@@ -55,16 +56,39 @@ function makeSelect(name, minRange, maxRange)
   </tr>
 <script language="javascript">
 
-  var s = "";
-  for (i=0; i< menuItems.length; i++)
-  {
-	  s += "<tr><td>";
-	  s += makeSelect("quan" + i, 0, 10);
-	  s += "</td><td>" + menuItems[i].name + "</td>";
-	  s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
-	  s += "<td>$<input type='text' name='cost'/></td></tr>";
-  }
-  document.writeln(s);
+    var s = "";
+    for (i=0; i< menuItems.length; i++)
+    {
+        s += "<tr><td>";
+        s += makeSelect("quan" + i, 0, 10);
+        s += "</td><td>" + menuItems[i].name + "</td>";
+        s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
+        s += "<td>$<input type='text' name='cost'/></td></tr>";
+    }
+    document.writeln(s);
+
+    var form = document.forms[0];
+    function updateTotals() 
+    {
+        var item;
+        for (i = 0; i < menuItems.length; i++) {
+            item = document.getElementsByName("quan" + i)[0].value;
+            if (parseInt(item) != 0)
+                document.getElementsByName("cost")[i].value = parseInt(item) * menuItems[i].cost.toFixed(2);
+        }
+        var subtotal = 0;
+        for (i = 0; i < menuItems.length; i++) {
+            item = document.getElementsByName("cost")[i].value;
+            if (parseFloat(item))
+                subtotal += parseFloat(item);
+        }
+        subtotal = subtotal;
+        tax = (subtotal * 0.0625);
+        total = subtotal + tax;
+        document.getElementById("subtotal").value = subtotal.toFixed(2);
+        document.getElementById("tax").value = tax.toFixed(2);
+        document.getElementById("total").value = total.toFixed(2);
+    }
 </script>
 </table>
 <p>Subtotal: 

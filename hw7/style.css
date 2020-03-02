@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Quicksand&display=swap');
+
+body {
+    background-color: #f3d1e6
+}
+
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center 
+}
+
+form {
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+    background-color: rgb(243, 227, 227);
+    border-radius: 8px;
+    font-size: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    justify-content: center;
+}
+
+form h1 {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--gray-lighter);
+    font-size: 15px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+span {
+    font-size: 10px;
+    color: #c01a15;
+}
+
+span.star{
+    font-size: 12px;
+}
+
+input[type=text]:focus {
+    border: 2px solid #c01a15;
+}
+
+table {
+    border: 1px solid black;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th { 
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: 1px solid black;
+}
+
+td {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+tr:hover {
+    background-color: rgba(255,255,255,.25)
+}
+
+input[type=radio]{
+    text-align: center;
+}
+
+select {
+    background-color: #f3bdbb;
+}

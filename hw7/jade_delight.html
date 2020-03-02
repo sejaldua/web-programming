@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Jade Delight</title>
-<!-- <link rel="stylesheet" href="main.css"> -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <script language="javascript">
@@ -83,10 +83,20 @@ function validatePhone()
 {
     var phone = document.getElementsByName('phone')[0];
     var error_msg_phone = document.getElementById("error_phone");
+
+        /* empty last name field */
+    if (phone.value == "") {
+        error_msg_phone.innerHTML = " Please enter a phone number";
+        phone.focus();
+        return false;
+    }
+    else
+        error_msg_phone.innerHTML = "";
+
     var reg1 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
     var reg2 = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}$/;
     if (!(reg1.test(phone.value) || (reg2.test(phone.value)))) {
-        error_msg_phone.innerHTML = " Phone number is invalid. Try: xxx-xxx-xxxx or (xxx)-xxx-xxxx";
+        error_msg_phone.innerHTML = " Phone number is invalid. Try: xxx-xxx-xxxx";
         phone.focus();
         return false;
     }
@@ -99,7 +109,6 @@ function validatePhone()
 function validateAddress(id, error_id)
 {
     /* remove spaces from string */
-    alert("validating " + id);
     var field = document.getElementsByName(id)[0];
     var error_msg = document.getElementById(error_id);
 
@@ -185,13 +194,14 @@ function makeSelect(name, minRange, maxRange)
 </script>
 
 <h1>Jade Delight</h1>
-<form value="myForm" onsubmit="return validate()">
+<div class="container">
+<form onsubmit="return validate()">
 
 <p>First Name: <input type="text"  name='fname' /></p>
-<p>Last Name*:  <input type="text"  name='lname' /><span id="error_lname">&nbsp;</span></p>
-<p>Street<span id="star1"></span>: <input type="text"  name='street' /><span id="error_street">&nbsp;</span></p>
-<p>City<span id="star2"></span>: <input type="text"  name='city' /><span id="error_city">&nbsp;</span></p>
-<p>Phone*: <input type="tel"  name='phone'/><span id="error_phone">&nbsp;</span></p>
+<p>Last Name<span class="star">*</span>:  <input type="text"  name='lname' /><span id="error_lname">&nbsp;</span></p>
+<p>Street<span class="star" id="star1"></span>: <input type="text"  name='street' /><span id="error_street">&nbsp;</span></p>
+<p>City<span class="star" id="star2"></span>: <input type="text"  name='city' /><span id="error_city">&nbsp;</span></p>
+<p>Phone<span class="star">*</span>: <input type="tel"  name='phone'/><span id="error_phone">&nbsp;</span></p>
 <p> 
 	<input type="radio"  name="p_or_d" value = "pickup" checked="checked" onchange="isNotDelivery()"/>Pickup  
 	<input type="radio"  name='p_or_d' value = 'delivery' onchange="isDelivery()"/>
@@ -232,5 +242,6 @@ function makeSelect(name, minRange, maxRange)
 <!-- <button onclick="validate()">Submit Button</button> -->
 
 </form>
+</div>
 </body>
 </html>

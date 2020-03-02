@@ -22,7 +22,6 @@ menuItems = new Array(
 	new MenuItem("Fried Rice", 2.35)
 );
 
-var form = document.forms[0];
 function updateTotals() 
 {
     var item;
@@ -51,76 +50,127 @@ function validate_name(name)
     return reg_name.test(name);
 }
     
-function validate_lastname()
+function validateLastName()
 {
     /* remove spaces from string */
-    alert("validating last name");
-    raw_last_name = document.getElementsByName('lname');
-    lastname = raw_last_name[0].value.replace(/\s+/g, '');
-    alert("Last name " + lastname);
-    error_msg1 = document.getElementById("error1");
+    var last_name = document.getElementsByName('lname')[0];
+    var error_msg_lname = document.getElementById("error_lname");
 
-    if (lastname == "") {
-        // empty last name	
-        error_msg1.innerHTML = " Please enter last name";
-        raw_last_name[0].focus();
-        alert("Entered");
+    /* empty last name field */
+    if (last_name.value == "") {
+        error_msg_lname.innerHTML = " Please enter last name";
+        last_name.focus();
         return false;
     }
+    else
+        error_msg_lname.innerHTML = "";
 
-    valid_name = validate_name(last_name[0].value);
-    if (!valid_name){
-        error_msg1.innerHTML = " Please use alphabets in the name";
-        raw_last_name[0].focus();
-        alert("Entered");
+    /* non-alphabetic last name field */
+    lname = last_name.value.replace(/\s+/g, '');
+    alpha_name = validate_name(lname);
+    if (!alpha_name) {
+        error_msg_lname.innerHTML = " The name should contain only alphabetic letters";
+        last_name.focus();
         return false;
     }
-    alert("hold up");
+    else
+        error_msg_lname.innerHTML = "";
+
     return true;
-
 }
 
-function validate_phone()
+function validatePhone()
 {
-    var reg = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
-    if (!reg.test(phone.value)) {
-        alert("Phone number is invalid. Try: xxx-xxx-xxxx");
+    var phone = document.getElementsByName('phone')[0];
+    var error_msg_phone = document.getElementById("error_phone");
+    var reg1 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+    var reg2 = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}$/;
+    if (!(reg1.test(phone.value) || (reg2.test(phone.value)))) {
+        error_msg_phone.innerHTML = " Phone number is invalid. Try: xxx-xxx-xxxx or (xxx)-xxx-xxxx";
         phone.focus();
+        return false;
     }
+    else
+        error_msg_phone.innerHTML = "";
+
+    return true;
 }
 
-
-function alert_message(hour, minute, time_needed, order_type)
+function validateAddress(id, error_id)
 {
-    alert("Thanks for your order.\nEstimated " + order_type + " time: " + (hour % 12) + ":" + (minute + time_needed));
+    /* remove spaces from string */
+    alert("validating " + id);
+    var field = document.getElementsByName(id)[0];
+    var error_msg = document.getElementById(error_id);
+
+    /* empty field */
+    if (field.value == "") {
+        error_msg.innerHTML = " Please enter a " + id;
+        field.focus();
+        return false;
+    }
+    else
+        error_msg.innerHTML = "";
+    
+    return true;
+}
+
+function isDelivery()
+{
+    document.getElementById("star1").innerHTML = "*";
+    document.getElementById("star2").innerHTML = "*";
+}
+
+function isNotDelivery()
+{
+    document.getElementById("star1").innerHTML = "";
+    document.getElementById("star2").innerHTML = "";
+}
+
+function getETA(minutes) {
+    d = new Date();
+    return new Date(d.getTime() + minutes*60000);
+}
+
+function alertMessage(eta, orderType, totalPrice)
+{
+    var hour = eta.getHours() > 12 ? eta.getHours() - 12 : eta.getHours();
+    var minute = eta.getMinutes();
+    var am_pm = eta.getHours() >= 12 ? "PM" : "AM";
+    alert("Thanks for your order!\nEstimated " + orderType + " time: " + (hour) + ":" + (minute) + " " + am_pm + "\nTotal amount to be paid: $" + totalPrice);
 }
 
 function validate()
 {
-    var is_valid = true;
-    // console.log("hello");
-    // var is_pickup = document.getElementsByName("p_or_d")[0].checked ? true : false;
+    var isValid = true;
 
-    is_valid = validate_lastname();
-    alert("hold up");
-    // is_valid = validate_phone();
-    d = new Date();
-    var hour = d.getHours();
-    var minute = d.getMinutes();
-    var time_needed, order_type;
-    if (!(is_pickup)) {
-        // is_valid = validate_street();
-        // is_valid = validate_city();
-        time_needed = 30;
-        order_type = "delivery";
+    /* required validations: last name and phone */
+    if (!validateLastName()) isValid = false;
+    if (!validatePhone()) isValid = false;
+
+    /* check order type */
+    var timeNeeded, orderType;
+    var is_pickup = document.getElementsByName("p_or_d")[0].checked;
+
+    /* secondary validations (delivery only): street and city */
+    if (!is_pickup) {
+        if (!validateAddress("street", "error_street")) isValid = false;
+        if (!validateAddress("city", "error_city")) isValid = false;
+        timeNeeded = 30;
+        orderType = "delivery";
     }
     else {
-        time_needed = 15;
-        order_type = "pickup";
+        timeNeeded = 15;
+        orderType = "pickup";
     }
-    alert_message(hour, minute, time_needed, order_type);
-    alert("hello");
-    return is_valid;
+
+    /* if all the field are valid, output order summary to user */
+    var eta = getETA(timeNeeded);
+    var totalPrice = document.getElementById("total").value;
+    if (isValid)
+        alertMessage(eta, orderType, totalPrice);
+
+    return isValid;
 }
 
 function makeSelect(name, minRange, maxRange)
@@ -135,17 +185,16 @@ function makeSelect(name, minRange, maxRange)
 </script>
 
 <h1>Jade Delight</h1>
-<form onsubmit="return validate()">
+<form value="myForm" onsubmit="return validate()">
 
 <p>First Name: <input type="text"  name='fname' /></p>
-<p>Last Name*:  <input type="text"  name='lname' /></p><span id="error1">&nbsp;</span></p>
-<p>Street: <input type="text"  name='street' /></p>
-<p>City: <input type="text"  name='city' /></p>
-<p>Phone*: <input type="tel"  name='phone'/></p>
-<!-- <small>Format: xxx-xxx-xxxx</small> -->
+<p>Last Name*:  <input type="text"  name='lname' /><span id="error_lname">&nbsp;</span></p>
+<p>Street<span id="star1"></span>: <input type="text"  name='street' /><span id="error_street">&nbsp;</span></p>
+<p>City<span id="star2"></span>: <input type="text"  name='city' /><span id="error_city">&nbsp;</span></p>
+<p>Phone*: <input type="tel"  name='phone'/><span id="error_phone">&nbsp;</span></p>
 <p> 
-	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
-	<input type="radio"  name='p_or_d' value = 'delivery'/>
+	<input type="radio"  name="p_or_d" value = "pickup" checked="checked" onchange="isNotDelivery()"/>Pickup  
+	<input type="radio"  name='p_or_d' value = 'delivery' onchange="isDelivery()"/>
 	Delivery
 </p>
 <table border="0" cellpadding="3">
@@ -178,6 +227,9 @@ function makeSelect(name, minRange, maxRange)
 </p>
 
 <input type = "submit" value = "Submit Order" />
+
+<!-- the button below is for debugging purposes -->
+<!-- <button onclick="validate()">Submit Button</button> -->
 
 </form>
 </body>

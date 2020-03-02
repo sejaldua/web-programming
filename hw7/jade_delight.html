@@ -49,13 +49,16 @@ function updateTotals()
 function validate()
 {
     var is_pickup = document.myForm.p_or_d[0].checked ? true : false;
+    console.log(is_pickup);
     d = new Date();
     var hour = d.getHours();
     var minute = d.getMinutes();
     var time_needed, order_type;
     if (!is_pickup) {
+        console.log("delivery");
         if (document.myForm.street.value == "" || document.myForm.city.value == "")
             alert("All delivery orders must include a valid address");
+        console.log("addy validated");
         time_needed = 30;
         order_type = "delivery";
     }

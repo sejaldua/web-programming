@@ -45,6 +45,51 @@ function updateTotals()
     document.getElementById("total").value = total.toFixed(2);
 }
 
+function validate_name(name)
+{
+    reg_name = /^[A-Za-z]+$/;
+    return reg_name.test(name);
+}
+    
+function validate_lastname()
+{
+    /* remove spaces from string */
+    alert("validating last name");
+    raw_last_name = document.getElementsByName('lname');
+    lastname = raw_last_name[0].value.replace(/\s+/g, '');
+    alert("Last name " + lastname);
+    error_msg1 = document.getElementById("error1");
+
+    if (lastname == "") {
+        // empty last name	
+        error_msg1.innerHTML = " Please enter last name";
+        raw_last_name[0].focus();
+        alert("Entered");
+        return false;
+    }
+
+    valid_name = validate_name(last_name[0].value);
+    if (!valid_name){
+        error_msg1.innerHTML = " Please use alphabets in the name";
+        raw_last_name[0].focus();
+        alert("Entered");
+        return false;
+    }
+    alert("hold up");
+    return true;
+
+}
+
+function validate_phone()
+{
+    var reg = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+    if (!reg.test(phone.value)) {
+        alert("Phone number is invalid. Try: xxx-xxx-xxxx");
+        phone.focus();
+    }
+}
+
+
 function alert_message(hour, minute, time_needed, order_type)
 {
     alert("Thanks for your order.\nEstimated " + order_type + " time: " + (hour % 12) + ":" + (minute + time_needed));
@@ -52,39 +97,30 @@ function alert_message(hour, minute, time_needed, order_type)
 
 function validate()
 {
-    console.log("hello");
+    var is_valid = true;
+    // console.log("hello");
     // var is_pickup = document.getElementsByName("p_or_d")[0].checked ? true : false;
-    // console.log(is_pickup);
-    if (!check_phone()) 
-        return false;
+
+    is_valid = validate_lastname();
+    alert("hold up");
+    // is_valid = validate_phone();
     d = new Date();
     var hour = d.getHours();
     var minute = d.getMinutes();
     var time_needed, order_type;
-    // if (!is_pickup) {
-    //     console.log("delivery");
-    //     if (form.street.value == "" || form.city.value == "")
-    //         alert("All delivery orders must include a valid address");
-    //     console.log("addy validated");
-    //     time_needed = 30;
-    //     order_type = "delivery";
-    // }
-    // else {
-    //     time_needed = 15;
-    //     order_type = "pickup";
-    // }
-    // alert_message(hour, minute, time_needed, order_type);
-}
-
-function check_phone()
-{
-    var reg = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
-    if (!reg.test(phone.value)) {
-        alert("Phone number is invalid. Try: xxx-xxx-xxxx");
-        phone.focus();
-        return false;
-    } else 
-        return true;
+    if (!(is_pickup)) {
+        // is_valid = validate_street();
+        // is_valid = validate_city();
+        time_needed = 30;
+        order_type = "delivery";
+    }
+    else {
+        time_needed = 15;
+        order_type = "pickup";
+    }
+    alert_message(hour, minute, time_needed, order_type);
+    alert("hello");
+    return is_valid;
 }
 
 function makeSelect(name, minRange, maxRange)
@@ -102,11 +138,11 @@ function makeSelect(name, minRange, maxRange)
 <form onsubmit="return validate()">
 
 <p>First Name: <input type="text"  name='fname' /></p>
-<p>Last Name*:  <input type="text"  name='lname' /></p>
+<p>Last Name*:  <input type="text"  name='lname' /></p><span id="error1">&nbsp;</span></p>
 <p>Street: <input type="text"  name='street' /></p>
 <p>City: <input type="text"  name='city' /></p>
 <p>Phone*: <input type="tel"  name='phone'/></p>
-<small>Format: xxx-xxx-xxxx</small>
+<!-- <small>Format: xxx-xxx-xxxx</small> -->
 <p> 
 	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
 	<input type="radio"  name='p_or_d' value = 'delivery'/>

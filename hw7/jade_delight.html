@@ -28,7 +28,7 @@ function updateTotals()
     for (i = 0; i < menuItems.length; i++) {
         item = document.getElementsByName("quan" + i)[0].value;
         if (parseInt(item) != 0)
-            document.getElementsByName("cost")[i].value = parseInt(item) * menuItems[i].cost.toFixed(2);
+            document.getElementsByName("cost")[i].value = (parseInt(item) * menuItems[i].cost).toFixed(2);
     }
     var subtotal = 0;
     for (i = 0; i < menuItems.length; i++) {
@@ -84,7 +84,7 @@ function validatePhone()
     var phone = document.getElementsByName('phone')[0];
     var error_msg_phone = document.getElementById("error_phone");
 
-        /* empty last name field */
+    /* check for phone field */
     if (phone.value == "") {
         error_msg_phone.innerHTML = " Please enter a phone number";
         phone.focus();
@@ -93,6 +93,7 @@ function validatePhone()
     else
         error_msg_phone.innerHTML = "";
 
+    /* check if phone number matches regex pattern*/
     var reg1 = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
     var reg2 = /^[(][0-9]{3}[)]-[0-9]{3}-[0-9]{4}$/;
     if (!(reg1.test(phone.value) || (reg2.test(phone.value)))) {
@@ -112,7 +113,7 @@ function validateAddress(id, error_id)
     var field = document.getElementsByName(id)[0];
     var error_msg = document.getElementById(error_id);
 
-    /* empty field */
+    /* check for empty field */
     if (field.value == "") {
         error_msg.innerHTML = " Please enter a " + id;
         field.focus();
@@ -146,7 +147,7 @@ function alertMessage(eta, orderType, totalPrice)
     var hour = eta.getHours() > 12 ? eta.getHours() - 12 : eta.getHours();
     var minute = eta.getMinutes();
     var am_pm = eta.getHours() >= 12 ? "PM" : "AM";
-    alert("Thanks for your order!\nEstimated " + orderType + " time: " + (hour) + ":" + (minute) + " " + am_pm + "\nTotal amount to be paid: $" + totalPrice);
+    alert("Thanks for your order!\nEstimated " + orderType + " time: " + (hour) + ":" + (minute.toString().padStart(2, '0')) + " " + am_pm + "\nTotal amount to be paid: $" + totalPrice);
 }
 
 function validate()
@@ -197,11 +198,11 @@ function makeSelect(name, minRange, maxRange)
 <div class="container">
 <form onsubmit="return validate()">
 
-<p>First Name: <input type="text"  name='fname' /></p>
-<p>Last Name<span class="star">*</span>:  <input type="text"  name='lname' /><span id="error_lname">&nbsp;</span></p>
-<p>Street<span class="star" id="star1"></span>: <input type="text"  name='street' /><span id="error_street">&nbsp;</span></p>
-<p>City<span class="star" id="star2"></span>: <input type="text"  name='city' /><span id="error_city">&nbsp;</span></p>
-<p>Phone<span class="star">*</span>: <input type="tel"  name='phone'/><span id="error_phone">&nbsp;</span></p>
+<p>First Name: <input type="text"  name='fname' placeholder="Johnny"/></p>
+<p>Last Name<span class="star">*</span>:  <input type="text"  name='lname' placeholder="Appleseed"/><span id="error_lname">&nbsp;</span></p>
+<p>Street<span class="star" id="star1"></span>: <input type="text"  name='street' placeholder="123 Winning Way"/><span id="error_street">&nbsp;</span></p>
+<p>City<span class="star" id="star2"></span>: <input type="text"  name='city' placeholder="Springfield"/><span id="error_city">&nbsp;</span></p>
+<p>Phone<span class="star">*</span>: <input type="tel"  name='phone' placeholder="123-456-7890"/><span id="error_phone">&nbsp;</span></p>
 <p> 
 	<input type="radio"  name="p_or_d" value = "pickup" checked="checked" onchange="isNotDelivery()"/>Pickup  
 	<input type="radio"  name='p_or_d' value = 'delivery' onchange="isDelivery()"/>
@@ -230,7 +231,7 @@ function makeSelect(name, minRange, maxRange)
 <p>Subtotal: 
    $<input type="text"  name='subtotal' id="subtotal" />
 </p>
-<p>Mass tax 6.25%:
+<p>Mass tax (6.25%):
   $ <input type="text"  name='tax' id="tax" />
 </p>
 <p>Total: $ <input type="text"  name='total' id="total" />

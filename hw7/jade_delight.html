@@ -3,9 +3,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Jade Delight</title>
-<link rel="stylesheet" href="main.css">
+<!-- <link rel="stylesheet" href="main.css"> -->
 </head>
-
 <body>
 <script language="javascript">
 
@@ -45,34 +44,47 @@ function updateTotals()
     document.getElementById("tax").value = tax.toFixed(2);
     document.getElementById("total").value = total.toFixed(2);
 }
-    
-function validate()
-{
-    var is_pickup = document.myForm.p_or_d[0].checked ? true : false;
-    console.log(is_pickup);
-    d = new Date();
-    var hour = d.getHours();
-    var minute = d.getMinutes();
-    var time_needed, order_type;
-    if (!is_pickup) {
-        console.log("delivery");
-        if (document.myForm.street.value == "" || document.myForm.city.value == "")
-            alert("All delivery orders must include a valid address");
-        console.log("addy validated");
-        time_needed = 30;
-        order_type = "delivery";
-    }
-    else {
-        time_needed = 15;
-        order_type = "pickup";
-    }
-    alert_message(hour, minute, time_needed, order_type);
-}
-
 
 function alert_message(hour, minute, time_needed, order_type)
 {
     alert("Thanks for your order.\nEstimated " + order_type + " time: " + (hour % 12) + ":" + (minute + time_needed));
+}
+
+function validate()
+{
+    console.log("hello");
+    // var is_pickup = document.getElementsByName("p_or_d")[0].checked ? true : false;
+    // console.log(is_pickup);
+    if (!check_phone()) 
+        return false;
+    d = new Date();
+    var hour = d.getHours();
+    var minute = d.getMinutes();
+    var time_needed, order_type;
+    // if (!is_pickup) {
+    //     console.log("delivery");
+    //     if (form.street.value == "" || form.city.value == "")
+    //         alert("All delivery orders must include a valid address");
+    //     console.log("addy validated");
+    //     time_needed = 30;
+    //     order_type = "delivery";
+    // }
+    // else {
+    //     time_needed = 15;
+    //     order_type = "pickup";
+    // }
+    // alert_message(hour, minute, time_needed, order_type);
+}
+
+function check_phone()
+{
+    var reg = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+    if (!reg.test(phone.value)) {
+        alert("Phone number is invalid. Try: xxx-xxx-xxxx");
+        phone.focus();
+        return false;
+    } else 
+        return true;
 }
 
 function makeSelect(name, minRange, maxRange)
@@ -93,7 +105,8 @@ function makeSelect(name, minRange, maxRange)
 <p>Last Name*:  <input type="text"  name='lname' /></p>
 <p>Street: <input type="text"  name='street' /></p>
 <p>City: <input type="text"  name='city' /></p>
-<p>Phone*: <input type="text"  name='phone' /></p>
+<p>Phone*: <input type="tel"  name='phone'/></p>
+<small>Format: xxx-xxx-xxxx</small>
 <p> 
 	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
 	<input type="radio"  name='p_or_d' value = 'delivery'/>

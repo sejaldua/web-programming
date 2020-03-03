@@ -24,17 +24,16 @@ menuItems = new Array(
 
 function updateTotals() 
 {
-    var item;
-    for (i = 0; i < menuItems.length; i++) {
-        item = document.getElementsByName("quan" + i)[0].value;
-        if (parseInt(item) != 0)
-            document.getElementsByName("cost")[i].value = (parseInt(item) * menuItems[i].cost).toFixed(2);
-    }
+    /* update cost values */
+    var num_items;
     var subtotal = 0;
     for (i = 0; i < menuItems.length; i++) {
-        item = document.getElementsByName("cost")[i].value;
-        if (parseFloat(item))
-            subtotal += parseFloat(item);
+        num_items = document.getElementsByName("quan" + i)[0].value;
+        if (parseInt(num_items) != 0) {
+            item_cost = (parseInt(num_items) * menuItems[i].cost).toFixed(2);
+            document.getElementsByName("cost")[i].value = item_cost;
+            subtotal += parseFloat(item_cost);
+        }
     }
     subtotal = subtotal;
     tax = (subtotal * 0.0625);
@@ -46,6 +45,7 @@ function updateTotals()
 
 function validate_name(name)
 {
+    /* alphabetical regular expression pattern */
     reg_name = /^[A-Za-z]+$/;
     return reg_name.test(name);
 }
@@ -125,23 +125,28 @@ function validateAddress(id, error_id)
     return true;
 }
 
+/* street and city are required for deliveries, add asterisk */
 function isDelivery()
 {
     document.getElementById("star1").innerHTML = "*";
     document.getElementById("star2").innerHTML = "*";
 }
 
+/* street and city are not required for pickups, remove asterisk */
 function isNotDelivery()
 {
     document.getElementById("star1").innerHTML = "";
     document.getElementById("star2").innerHTML = "";
 }
 
+/* get X minutes from now, where X = 15 for pickups OR X = 30 for deliveries */
 function getETA(minutes) {
     d = new Date();
     return new Date(d.getTime() + minutes*60000);
 }
 
+/* order summary displays the following message to the user:
+ * thank you message, order type, estimated time of arrival, and total price */
 function alertMessage(eta, orderType, totalPrice)
 {
     var hour = eta.getHours() > 12 ? eta.getHours() - 12 : eta.getHours();
@@ -237,7 +242,7 @@ function makeSelect(name, minRange, maxRange)
 <p>Total: $ <input type="text"  name='total' id="total" />
 </p>
 
-<input type = "submit" value = "Submit Order" />
+<input type = "submit" value = "Submit Order" style="position:relative; left:25%;"/>
 
 <!-- the button below is for debugging purposes -->
 <!-- <button onclick="validate()">Submit Button</button> -->

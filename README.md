@@ -38,9 +38,16 @@ Joe’s only sells three items: hotdogs ($3.25 each), French Fries ($2.00 each) 
 
 <img src="images/luckyball.png" height="500">
 
-#### Part 1: Amicable Numbers
+#### Part 2: Amicable Numbers
 **URL:** https://sejaldua.com/web-programming/hw6/amicable_nums.html  
 **Language(s):** HTML, CSS, Javascript  
 **Description:** A factor is a number that divides evenly into another number.  A pair of numbers are called amicable if their factors (excluding themselves) add up to each other. For example, the numbers 220 and 284 are amicable, because the factors of 220 are [1, 2, 4, 5, 10, 11, 20, 22, 44, 55, 110] and sum to 284,while the factors of 284 are [1, 2, 4, 71, 142] and sum to 220. Implement an amicable number checker using Javascript arrays and variables.  
 
 <img src="images/amicable.png" height="450">
+
+### Assignment 7: Jade Delight
+**URL:** https://sejaldua.com/web-programming/hw7/jade_delight.html  
+**Language(s):** HTML, CSS, Javascript  
+**Description:**  Add validation (using Javascript) to the provided HTML form. The validation should be approached in two parts: when the user selects a quantity and when the user clicks submit.  
+
+<img src="images/jade.png" height="500">

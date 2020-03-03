@@ -35,6 +35,8 @@ function updateTotals()
             subtotal += parseFloat(item_cost);
         }
     }
+
+    /* update subtotal, tax, and total */
     subtotal = subtotal;
     tax = (subtotal * 0.0625);
     total = subtotal + tax;
@@ -152,6 +154,12 @@ function alertMessage(eta, orderType, totalPrice)
     var hour = eta.getHours() > 12 ? eta.getHours() - 12 : eta.getHours();
     var minute = eta.getMinutes();
     var am_pm = eta.getHours() >= 12 ? "PM" : "AM";
+    
+    /* SPECIAL CASE: user has submitted order without ordering anyting */
+    if (totalPrice == "") {
+        totalPrice = 0;
+        totalPrice.toFixed(2);
+    }
     alert("Thanks for your order!\nEstimated " + orderType + " time: " + (hour) + ":" + (minute.toString().padStart(2, '0')) + " " + am_pm + "\nTotal amount to be paid: $" + totalPrice);
 }
 

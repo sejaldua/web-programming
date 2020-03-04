@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Javascript Forms</title>
+	<style type="text/css">
+		html,body,input,select {font-size: 24px;}
+	</style>
+	<script language="javascript">
+	function show1()
+	{
+		with(document.forms[0])
+		{
+			txtBrands = brands.value;
+			brandArray = txtBrands.split(",");
+			s = brandArray.join(" * ");
+			//n1 = txtNumber[0].value;
+			//n2 = txtNumber[1].value;
+			//s = n1 + n2;
+			sum= 0;
+			for (i=0; i<txtNumber.length; i++)
+				sum += parseInt(txtNumber[i].value);
+			
+			sum = 0;
+			for (i=1; i<=3; i++)
+				sum += parseInt(document.getElementById("txtNumber"+i).value);
+			s = "the sum is " + sum;
+			
+			s = "";
+			for (i=0; i< chkwhich.length; i++)
+			{
+				if (chkwhich[i].checked)
+				{
+					s += chkwhich[i].value + " ";
+					
+				}
+			}
+			s = s=="" ? "none selected" : s;
+			
+			i = sel1.selectedIndex;
+			//sel1.options[i].text = "this was picked!";
+			s = "";
+			for (i=0; i<sel1.options.length; i++)
+			{
+				if (sel1.options[i].selected)
+				{
+					s += sel1.options[i].text;
+				}
+			}
+			
+			
+				
+		}
+		
+		document.getElementById("result").innerHTML = s;
+		
+	}
+	</script>
+</head>
+
+<body>
+	<form>
+	Brands: <input type='text' name='brands'  id='brands'
+				   value = 'starbucks,dunkin'>
+		<br />
+	Number 1<input type='text' name='txtNumber' id='txtNumber1'><br>
+	Number 2<input type='text' name='txtNumber' id='txtNumber2'><br>
+	Number 3<input type='text' name='txtNumber' id='txtNumber3'><br>
+	Which One?  
+	<input type="radio" name="which" value="first">First
+	<input type="radio" name="which" value="second">Second
+	<input type="radio" name="which" value="third">Third
+		<br ><br >
+	Which One?  
+	<input type="checkbox" name="chkwhich" value="first">First
+	<input type="checkbox" name="chkwhich" value="second">Second
+	<input type="checkbox" name="chkwhich" value="third">Third
+
+<br>
+	<select name='sel1' id='sel1' size=4  multiple>
+		<option value='1st'>first</option>
+		<option>second</option>
+		<option selected>third</option>
+		<option>fourth</option>
+	</select>
+
+<br>		
+	<input type="button" value = "press me" onclick="show1()">
+	</form>
+	<div id='result'>&nbsp;</div>
+</body>
+</html>

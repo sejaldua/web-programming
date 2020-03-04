@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS Associative Array</title>
+</head>
+
+<body>
+	<script language="javascript">
+	assocArray  = {"hotdog":3.5, "fries":2, "soda": 1};
+	alert(assocArray["hotdog"]);
+		
+	items = ["hotdog", "fries", "soda"];
+	items.forEach(showThem);
+
+	function showThem(item, index) {
+    document.write (item + " - $" + assocArray[item].toFixed(2) + "<br>");
+	
+}
+		
+	</script>
+</body>
+</html>

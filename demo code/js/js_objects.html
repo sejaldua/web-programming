@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS Objects</title>
+</head>
+
+<body>
+	<script language="javascript">
+	function Rectangle(len, wid)
+	{		
+		this.length = len;
+		this.width = wid;
+		
+	
+		this.area = function()
+		{
+			return this.length * this.width;
+		}
+	
+
+	}
+		
+		function area(r)
+		{
+			return r.length * r.width;
+		}
+		r1 = new Rectangle(3,4);
+		alert(area(r1));
+		alert(r1.area());
+
+	</script>
+</body>
+</html>

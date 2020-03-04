@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS Forms</title>
+	<style type="text/css">
+		html,body,input {font-size: 30px;}
+	</style>
+	<script language="javascript">
+	function validate()
+	{
+		txt = document.getElementById("name").value;
+		if (txt =="")
+			{
+				//alert("The name is required");
+				document.getElementById("error").innerHTML = 
+					"name is required";
+				//txt.focus();
+			}
+		return false;
+	}
+	
+	</script>
+</head>
+
+<body>
+	<form onSubmit="return validate()">
+	Name* <input type="text" id='name' name='name'>
+		<span id = "error">&nbsp;</span><br>
+	<input type = "submit">
+	</form>
+</body>
+</html>

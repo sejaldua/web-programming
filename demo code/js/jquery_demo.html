@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jQuery Demo</title>
+<style type="text/css">
+	html,body,input {font-size: 24px; font-family:arial, sans-serif}
+	#writeHere {padding: 10px;  border: 1px #ff0000 solid; max-width: 300px;}
+	.myButton {background-color: #8A4849; color: #fff;}
+	#theform {display:none; margin-top: 20px;}
+	a {text-decoration: none;  color: #2D9A30; padding-top: 15px;  display:block;}
+	a:hover {text-decoration: underline;}
+	a.bigLinks {font-size: 34px;}
+</style>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous">
+</script>
+<script language="javascript">
+$(document).ready(function() {
+	//alert("hi");
+	$("#btnbigLinks").click (function() {
+		$('a').addClass('bigLinks');
+	});
+
+	$("#btnDoSomething").click(function() {
+		doSomething2();
+		$('a').each(function() {
+			$(this).css('font-weight', 'bold');
+		})
+	});
+
+	
+	$("#theform").show (4000,function() {
+		alert("Enter some numbers!");
+	}
+
+						 
+   );
+	
+	
+}	// end doc.ready event handler
+)	// end document.ready
+function doSomething1() 
+{
+	n = parseInt(prompt ("Enter a number", "1"));
+	n += parseInt(prompt ("Enter a number", "2"));
+	$("#writeHere").html ("The sum is: " + n);
+}
+
+function doSomething2() 
+{
+	n = parseInt($("#num1").val());
+	n += parseInt($("#num2").val());
+	$("#writeHere").html ("The sum is: " + n);
+}
+
+</script>
+</head>
+
+<body>
+	Results: <div id="writeHere">&nbsp;</div>
+	<br>
+	<input type="button" class='myButton' value="Do Something" 
+		id="btnDoSomething">
+	<input type="button" value="Big Links" class='myButton' 
+		id="btnbigLinks">
+	
+	<form id="theform">
+	Number 1: <input type="text" id="num1" value="20"><br>
+	Number 2: <input type="text" id="num2" value="30">
+	</form>
+	<br>
+	<a href = "#">Go Here</a>
+	<a href = "#">Go There</a>
+			
+</body>
+</html>

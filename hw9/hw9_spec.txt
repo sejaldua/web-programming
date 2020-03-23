@@ -1,0 +1,36 @@
+Objective: Practice with JSON and Javascript
+
+Part 1:  Create a JSON
+
+Your assignment is to create a JSON to represent a set list for a cover band.  Each entry should have space to describe the artist(s), title, music genre(s), and year the song was released.
+
+Note:  your object should allow for multiple artists and multiple genre's 
+
+You must include at least 10 songs.  The data must be real.  You may reuse the data from the XML assignment if you want.  You must have songs from at least 3 genres (genre could be country, rock, pop, metal, ska, etc)
+
+Part 2: Serialize and display
+
+Display all data on page (serialized)
+
+Part 3: User friendly display 
+
+Display all data in a user friendly format in a table or something like this: 
+
+Who Loves You
+Artist: The Four Seasons
+Genre: rock, disco
+Released 1975
+
+Part 4: Filter the data
+
+Include a form that allows the user to pick a genre.  The form should have a drop down box (<select>) listing the possible genres plus a  button  labeled "Filter".  You must list only genres that are in the set list.  
+
+When the user clicks the button, display only song titles from the selected genre in a user friendly format.
+
+Note:  All items MUST be displayed on the page - not in an "alert" box
+
+Deliverables:  
+
+PDF or TEXT file with listing of the code
+
+URL of the HTML file working online

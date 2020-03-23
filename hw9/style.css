@@ -5,12 +5,15 @@ body {
     font-family: 'Signika', sans-serif;
     width: 100%;
     margin: auto;
-    background-color: #f5f5f5;
+    background-color: #c8d8c3;
 }
 section {
     overflow: hidden;
     padding: 20px;
     margin-bottom: 40px;
+}
+heading {
+    text-align: center;
 }
 h1 {
     text-align: center;
@@ -28,7 +31,7 @@ h1 {
     border-radius: 30px;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 8px 42px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -47,10 +50,12 @@ h1 {
     text-align: left;
     background-color: #000000;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
 }
-tr {
+tr:not(:last-child) {
     border-bottom: 0.3px solid rgb(100, 100, 100);
+}
+tr:not(:first-child) {
     border-top: 0.3px solid rgb(100, 100, 100);
 }
 .hrow {

@@ -9,7 +9,7 @@
 <body>
     <script language="javascript">
         document.addEventListener("DOMContentLoaded", () => {
-        // part 1 : create a JSON to represent a song list 
+        // PART 1: CREATE A JSON
         let setlist = [
             {
                 "title": "Till the World Ends",
@@ -301,7 +301,7 @@
             }
         ];
 
-        // SERIALIZE AND DISPLAY
+        // PART 2: SERIALIZE AND DISPLAY
         for (i = 0; i < setlist.length; i++) { 
             serialized = JSON.stringify(setlist[i]);
             document.getElementById("allData").innerHTML += serialized + "<br\>";
@@ -309,8 +309,8 @@
         var str_setlist = JSON.stringify(setlist);
         var json_setlist = JSON.parse(str_setlist);
         
-        // USER FRIENDLY DISPLAY
-        function displayAll() {
+        // PART 3: USER FRIENDLY DISPLAY
+        function displayColTitles() {
             s = "<table class='table'>";
             s += "<tr class='hrow'>";
             s += "<th><b>TITLE</b></th>";
@@ -318,62 +318,61 @@
             s += "<th><b>GENRE</b></th>";
             s += "<th><b>YEAR</b></th>";
             s += "</tr>";
-            for (x in json_setlist) {
-                s += "<tr>";
-                s += "<th>" + json_setlist[x].title + "</th>";
-                s += "<th>" + json_setlist[x].artist + "</th>";
-                s += "<th>" + json_setlist[x].genre + "</th>";
-                s += "<th>" + json_setlist[x].year + "</th>";
-                s += "</tr>";
-            }
-            document.getElementById("userFriendlyView").innerHTML = s;
+            return s;
         }
-        displayAll();
 
-        // part 4: filter the data by genre and display only song titles
-        document.querySelector("#button").addEventListener("click", function() {
+        function displaySong(x) {
             s = "";
+            s += "<tr>";
+            s += "<th>" + json_setlist[x].title + "</th>";
+            s += "<th>" + json_setlist[x].artist + "</th>";
+            s += "<th>" + json_setlist[x].genre + "</th>";
+            s += "<th>" + json_setlist[x].year + "</th>";
+            s += "</tr>";
+            return s;
+        }
+        
+        function displayAll() {
+            songs = displayColTitles();
+            for (x in json_setlist)
+                songs += displaySong(x);
+            document.getElementById("userFriendly").innerHTML = songs;
+        }
+        displayAll();        
+
+        // PART 4: FILTER BY GENRE
+        document.querySelector("#filter").addEventListener("click", function() {
             var selection = document.querySelector("#selection").value;
+            songs = displayColTitles();
             if (selection == "All") {
-                displayAll();
+                for (x in json_setlist)
+                    songs += displaySong(x);
             }
             else {
-                s = "<table class='table'>";
-                s += "<tr class='hrow'>";
-                s += "<th><b>TITLE</b></th>";
-                s += "<th><b>ARTIST</b></th>";
-                s += "<th><b>GENRE</b></th>";
-                s += "<th><b>YEAR</b></th>";
-                s += "</tr>";
                 for (x in json_setlist) {
                     if (selection == json_setlist[x].genre) {
-                        s += "<tr>";
-                        s += "<th>" + json_setlist[x].title + "</th>";
-                        s += "<th>" + json_setlist[x].artist + "</th>";
-                        s += "<th>" + json_setlist[x].genre + "</th>";
-                        s += "<th>" + json_setlist[x].year + "</th>";
-                        s += "</tr>";
+                        songs += displaySong(x);
                     }
                 }
-                document.getElementById("userFriendlyView").innerHTML = s;
             }
+            document.getElementById("userFriendly").innerHTML = songs;
         });
 
-        // display all data
-        document.querySelector("#buttonTwo").addEventListener("click", function() {displayAll();});
+        // DISPLAY ALL SONGS (RESET)
+        document.querySelector("#showAll").addEventListener("click", function() {displayAll();});
     })
     
 </script>
-<heading> <h1 style="padding-top: 20px">QUARANTINE BOPS</h1> </heading>
+<heading> <h1 style="padding-top: 20px">QUARANTINE BOPS</h1> <h2>A Themed Playlist Inspired By COVID-19</h2></heading>
 <div style="width:100%; align-items: center; justify-content: center; display: flex;">
     <div class="first" style="align-self: flex-start; width: 45%; margin: 10px; padding: 10px; float: left">
         <h2 style="font-family: 'Signika', sans-serif;">Serialized Data</h2>
         <p id="allData"></p>
     </div>
-    <div class="second" style="align-self: flex-start; width: 45%; margin: 10px; padding: 10px; float: right">
+    <div class="second" style="align-self: flex-start; width: 45%; margin: 10px; padding: 10px; float: right;">
         <form id="form">
             <h2>User-Friendly Filter</h2>
-            <select name="Genres" id="selection">
+            <select name="Genres" id="selection" style="margin-right: 12px;">
             <option value="All">All Genres</option>
             <option value="Pop">Pop</option>
             <option value="Soul">Soul</option>
@@ -382,11 +381,10 @@
             <option value="Indie">Indie</option>
             <option value="Electronic">Electronic</option>
             </select>
+            <div class="button" id="filter">FILTER</div>
+            <div class="button" id="showAll">SHOW ALL</div>
             <br><br>
-            <div class="button" id="button">Filter By Genre</div>
-            <div class="button" id="buttonTwo">Show All Songs</div>
-            <div id="tableView"></div>
-            <div id="userFriendlyView"></div>
+            <div id="userFriendly"></div>
         </form>
     </div>
 </div>

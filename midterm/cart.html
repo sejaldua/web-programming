@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link rel="stylesheet" href="cart.css" media="screen" title="no title" charset="utf-8">
+    <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+    <meta name="robots" content="noindex,follow" />
+	 <style type = "text/css">
+	  	input[type=price] {
+	  margins: auto;
+	  width: 100%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  box-sizing: border-box;
+	}
+	  </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <div class="nav-container">
+          <div class="floatleft">
+            <li><a href="index.html">Home</a></li>
+          </div>
+          <div class="floatright">
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="cart.html"><img class="cart" src="asset2.png"></a></li>
+          </div>
+        </div>
+      </ul>
+    </nav>
+    <script type="text/javascript">
+          function Watch(name, price, size, image) {
+            this.name = name,
+            this.price = price,
+            this.size = size,
+            this.image = image
+        }
+        
+        let watch_array = [
+            new Watch('Fezziwig', 1379.99, 41, "./watches/1.png"),
+            new Watch('Gashford', 1249.99, 43, "./watches/2.png"),
+            new Watch('Arabella', 1699.99, 41, "./watches/3.png"),
+            new Watch('Clarissa', 879.99, 43, "./watches/4.png"),
+            new Watch('Signor',2199.99, 41, "./watches/5.png"),
+            new Watch('Tetterby', 599.99, 41, "./watches/6.png"),
+            new Watch('Colonel',1799.99, 43, "./watches/7.png"),
+            new Watch('Cropley', 1699.99, 43, "./watches/8.png"),
+            new Watch('Jarley', 1349.99, 39, "./watches/9.png"),
+            new Watch('Chivery', 999.99, 43, "./watches/10.png"),
+            new Watch('Wickham', 399.99, 39, "./watches/11.png"),
+            new Watch('Spenlow', 1399.99, 41, "./watches/12.png"),
+            new Watch('Hawdon', 749.99, 39, "./watches/13.png"),
+            new Watch('Jutley', 1699.99, 43, "./watches/14.png"),
+            new Watch('Melia', 1999.99, 41, "./watches/15.png"),
+            new Watch('Caroline',1399.99, 41, "./watches/16.png")
+        ];
+    </script>
+
+    <div class="shopping-cart">
+      <form onsubmit="return submit1()">
+      <!-- Title -->
+      <div class="title">
+        Shopping Cart
+      </div>
+      <script type="text/javascript">
+		  var queryString = location.search.substring(1);
+        for(var i = 0; i < watch_array.length; i++){
+          s = ""
+          s += "<div class = 'item'>";
+          s += "<div class = 'buttons'>";
+          s += "<span class='delete-btn'></span>";
+          s += "<span class='like-btn'></span>";
+          s += "</div>";
+          s += "<div class='image'>";
+          s += "<img class='watch' src = '" + watch_array[i].image + "' height:'60px' width: '60px'/>";
+          s += "</div>";
+          s += "<div class='description'>";
+          s += "<span>" + watch_array[i].name + "</span>";
+          s += "<span>" + watch_array[i].size + "mm</span>";
+          s += "</div>";
+          s += "<div class='quantity'>";
+          s += "<button class='plus-btn' type='button' name='button'>";
+          s += "<img src='plus.svg' alt=''/>";
+          s += "</button>";
+          s += "<input type='text' name='quan" + i;
+		  if(parseInt(queryString) == i)
+			  s+= "' value='1'>";
+		  else
+			  s+= "' value='0'>";
+          s += "<button class='minus-btn' type='button' name='button'>";
+          s += "<img src='minus.svg' alt='' />";
+          s += "</button>";
+          s += "</div>";
+          s += "<div class='total-price'>$" + watch_array[i].price + "</div>";
+          s += "</div>";
+          document.writeln(s)
+        }
+      </script>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <table style="justify-content: center;">
+          <tr>
+            <td>Number of items:</td> 
+            <td style="text-align: right;"><input type="price"  name='num_items' id="num_items" /></td>
+          </tr>
+          <tr>
+            <td>Subtotal:</td> 
+            <td style="text-align: right;"><input type="price"  name='subtotal' id="subtotal" /></td>
+          </tr>
+          <tr>
+            <td>Tax:</td>
+            <td style="text-align: right;"> <input type="price"  name='tax' id="tax" /></td>
+          </tr>
+          <tr>
+            <td>Total:</td>
+            <td style="text-align: right;"> <input type="price"  name='total' id="total" /></td>
+          </tr>
+
+        </table>
+      </div>
+      <input type = "submit" value = "Submit Order" style="position:relative; left:25%;"/>
+    </form>
+    </div>
+
+
+
+
+    <script type="text/javascript">
+		
+		document.addEventListener("DOMContentLoaded", function(event){
+			window.scroll(0, document.documentElement.scrollHeight);
+  			validate();
+		});
+      $('.minus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value > 1) {
+    			value = value - 1;
+    		} else {
+    			value = 0;
+    		}
+
+        $input.val(value);
+        validate();
+
+    	});
+
+    	$('.plus-btn').on('click', function(e) {
+    		e.preventDefault();
+    		var $this = $(this);
+    		var $input = $this.closest('div').find('input');
+    		var value = parseInt($input.val());
+
+    		if (value < 100) {
+      		value = value + 1;
+    		} else {
+    			value =100;
+    		}
+
+        $input.val(value);
+        validate();
+      });
+
+      $('.like-btn').on('click', function() {
+        $(this).toggleClass('is-active');
+      });
+
+      function validate() {
+        document.getElementById("subtotal").value = "test";
+
+        var num_items;
+        var total_items = 0;
+        var subtotal = 0;
+        for (i = 0; i < watch_array.length; i++) {
+            num_items = document.getElementsByName("quan" + i)[0].value;
+            if (parseInt(num_items) != 0) {
+                total_items += parseInt(num_items, 10);
+                item_cost = (parseInt(num_items) * watch_array[i].price).toFixed(2);
+                subtotal += parseFloat(item_cost);
+            }
+        }
+
+        /* update subtotal, tax, and total */
+        tax = (subtotal * 0.0625);
+        total = subtotal + tax;
+        document.getElementById("num_items").value = total_items;
+        document.getElementById("subtotal").value = "$" + subtotal.toFixed(2);
+        document.getElementById("tax").value = "$" + tax.toFixed(2);
+        document.getElementById("total").value = "$" + total.toFixed(2);
+    }
+
+    function submit1() {
+      total_items = document.getElementById("num_items").value
+      var days;
+      if (total_items < 3)
+        days = 2;
+      else if (total_items < 6)
+        days = 5;
+      else
+        days = 12;
+      var d = new Date();
+      d.setDate(d.getDate()+days);
+      const options = { weekday: 'long', month: 'long', day: 'numeric' };
+      if (total_items != 0) {
+        alert("You ordered " + total_items + " item(s) for a total cost of $" + total.toFixed(2) + ".\n Your order will be ready for pickup on " + d.toLocaleDateString(undefined, options) + ".\n Thank you for shopping with us!");
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    </script>
+  </body>
+  <footer style="background-color: #21295C">
+    <br>
+    <div class="Awards">
+      &nbsp Awards and Recognition:
+    <br>
+    <br>
+       - 3x Winner of "Best Watches for Men" (2016, 2018, 2019)
+      <br>
+       - 2x Winner of Blue Dot Award for Product Design (2015, 2017)
+      <br>
+      - 4x Winner of Style Magazines "Best Watches in America" (2016-2019) 
+      <br>
+  </div>
+    <div class="Social-Media">
+      Follow Us!
+      <br>
+      <br>
+      <img src="facebook.png" style="height:80px;width:80px" title="Facebook: Johnsons Watches">
+      &nbsp
+      <img src="twitter.png" style="height:80px;width:80px" title="Twitter: @johnsonwatches">
+      &nbsp
+      <img src="instagram.png"style="height:80px;width:80px" title="Instagram: @johnsonwatches">
+    </div>
+    <div class="Terms">
+      <br style="line-height: 2"> 
+       <a href="terms.html" style="padding-left: 100px; text-decoration: underline">Terms & Conditions</a>
+    </div>
+    <br style="line-height: 2">
+
+
+</footer>
+</html>

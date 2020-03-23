@@ -1,0 +1,381 @@
+<!-- Watch Website - index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Watch Website</title>
+	<link rel="stylesheet" href="StyleSheet.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script lang="javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script lang="javascript" src="js/d3.v4.min.js"></script>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Montserrat|Quicksand|Assistant&display=swap');
+
+		body {
+			background: #fff;
+		}
+
+		#container {
+			text-align: center;
+			justify-content: center;
+			position: relative;
+			margin: 20px;
+		}
+
+		svg{
+			stroke: #000;
+			font-family: "Assistant", sans-serif;
+		}
+
+		img{
+			margin: 0 auto;
+		}
+
+		#rim {
+		fill: none;
+		stroke: #999;
+		stroke-width: 3px;
+		}
+
+		.second-hand{
+			stroke-width:3;
+
+		}
+
+		.minute-hand{
+			stroke-width:8;
+			stroke-linecap:round;
+		}
+
+		.hour-hand{
+			stroke-width:12;
+			stroke-linecap:round;
+		}
+
+		.hands-cover{
+			stroke-width:3;
+			fill:#fff;
+		}
+
+		.second-tick{
+			stroke-width:3;
+			fill:#000;	
+		}
+
+		.hour-tick{
+			stroke-width:8;
+		}
+
+		.second-label{
+			font-size: 12px;
+		}
+
+		.hour-label{
+			font-size: 24px;
+		}
+		.top-image-container {
+			  position: relative;
+			  text-align: center;
+			  color: white;
+			  margin: auto;
+		}
+		.image-text{
+			  position: absolute;
+			  top: 50%;
+			  left: 25%;
+			  transform: translate(-50%, -50%);
+
+		}
+		.myButton {
+		position: absolute;
+		left: 30%;
+		background-color:#0000b8;
+		border-radius:5px;
+		border:3px solid #ffffff;
+		cursor:pointer;
+		color:#ffffff;
+		font-size:3vh;
+		padding:10px 21px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #6db362;
+		
+	}
+	.myButton:hover {
+		background-color:#5054a3;
+	}
+	.myButton:active {
+		position:relative;
+		top:1px;
+	}
+	.Johnsons{
+		font-size: 6vh;
+	}
+	.Simplest{
+		font-size: 5vh;
+	}
+		@media screen and (max-width: 800px) {
+			#container {
+				visibility: hidden;
+				clear: both;
+				float: left;
+				margin: 10px auto 5px 20px;
+				width: 28%;
+				display: none;
+			}
+		}
+		@media screen and (max-width: 900px) {
+			.Johnsons{
+				font-size: 4vh
+			}
+			.Simplest{
+				font-size: 3vh
+			}
+			.myButton{
+				font-size: 2vh
+			}
+		}
+	.left, .right {display: inline-block; *display: inline; vertical-align: top; font-size: 12px; text-align: center; padding: 10px; margin: 10px}
+    	.left {width: 40%; background-color: #f1f1f1; margin: 3%; border-radius: 5px;}
+    	.right {width: 25%; background-color: #f1f1f1;margin: 3%;border-radius: 5px;}
+	</style>
+</head>
+
+<body>
+	<nav>
+		<ul>
+			<div class="nav-container">
+				<div class="floatleft">
+					<li><a class="active" href="index.html">Home</a></li>
+				</div>
+				<div class="floatright">
+					<li><a href="catalogue.html">Catalogue</a></li>
+					<li><a href="contact.html">Contact</a></li>
+					<li><a href="aboutus.html">About Us</a></li>
+					<li><a href="terms.html">Terms</a></li>
+					<li><a href="cart.html"><img class="cart" src="carticon.png"></a></li>
+				</div>
+			</div>
+		</ul>
+	</nav>
+	
+	
+	<div class="top-image-container">
+		<img src="home page.png" style = "width: 100%">
+		<div class = "image-text">
+			<p class = "Johnsons"><strong>Johnson's Watches</strong></p>
+			<p class = "Simplest"><strong>The Simplest and Sleekest</strong></p>
+			<a href="catalogue.html" class="myButton" style = "margin:auto">Shop Now</a>
+		</div>
+	</div>
+	
+	<div class = "container" style = "width: 70%">
+	<h3 style = "text-align: center; margin-top: 40px;"> Who We Are</h3>
+	<p><div id="container" style: "float: left"></div>
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+		<script>
+	
+			var radians = 0.0174532925, 
+				clockRadius = 150,
+				margin = 200,
+				width = (clockRadius+margin)*2,
+				height = (clockRadius+margin)*2,
+				width = width,
+				height = height,
+				hourHandLength = 2*clockRadius/3,
+				minuteHandLength = clockRadius,
+				secondHandLength = clockRadius-12,
+				secondHandBalance = 30,
+				secondTickStart = clockRadius;
+				secondTickLength = -10,
+				hourTickStart = clockRadius,
+				hourTickLength = -18
+				secondLabelRadius = clockRadius + 16;
+				secondLabelYOffset = 5
+				hourLabelRadius = clockRadius - 40
+				hourLabelYOffset = 7;
+	
+	
+			var hourScale = d3.scale.linear()
+				.range([0,330])
+				.domain([0,11]);
+	
+			var minuteScale = secondScale = d3.scale.linear()
+				.range([0,354])
+				.domain([0,59]);
+	
+			var handData = [
+				{
+					type:'hour',
+					value:0,
+					length:-hourHandLength,
+					scale:hourScale
+				},
+				{
+					type:'minute',
+					value:0,
+					length:-minuteHandLength,
+					scale:minuteScale
+				},
+				{
+					type:'second',
+					value:0,
+					length:-secondHandLength,
+					scale:secondScale,
+					balance:secondHandBalance
+				}
+			];
+	
+			function drawClock(){
+				updateData();
+
+				var svg = d3.select("#container").append("svg")
+					.attr("width", width)
+					.attr("height", height);
+	
+				var myimage = svg.append('image')
+					.attr('xlink:href', 'watchface/test3.png')
+					.attr('width', width)
+					.attr('height', width);
+	
+				var face = svg.append('g')
+					.attr('id','clock-face')
+					.attr('transform','translate(' + (clockRadius + margin) + ',' + (clockRadius + margin) + ')');
+	
+				face.selectAll('.second-tick')
+					.data(d3.range(0,60)).enter()
+						.append('line')
+						.attr('class', 'second-tick')
+						.attr('x1',0)
+						.attr('x2',0)
+						.attr('y1',secondTickStart)
+						.attr('y2',secondTickStart + secondTickLength)
+						.attr('transform',function(d){
+							return 'rotate(' + secondScale(d) + ')';
+						});
+	
+				face.selectAll('.hour-tick')
+					.data(d3.range(0,12)).enter()
+						.append('line')
+						.attr('class', 'hour-tick')
+						.attr('x1',0)
+						.attr('x2',0)
+						.attr('y1',hourTickStart)
+						.attr('y2',hourTickStart + hourTickLength)
+						.attr('transform',function(d){
+							return 'rotate(' + hourScale(d) + ')';
+						});
+	
+				face.selectAll('.hour-label')
+					.data(d3.range(1,13))
+						.enter()
+						.append('text')
+						.attr('class', 'hour-label')
+						.attr('text-anchor','middle')
+						.attr('x',function(d){
+							return hourLabelRadius*Math.sin(hourScale(d)*radians);
+						})
+						.attr('y',function(d){
+							return -hourLabelRadius*Math.cos(hourScale(d)*radians) + hourLabelYOffset;
+						})
+						.text(function(d){
+							return d;
+						});
+	
+	
+				var hands = face.append('g').attr('id','clock-hands');
+	
+				face.append('g').attr('id','face-overlay')
+					.append('circle').attr('class','hands-cover')
+						.attr('x',0)
+						.attr('y',0)
+						.attr('r',clockRadius/20);
+	
+				hands.selectAll('line')
+					.data(handData)
+						.enter()
+						.append('line')
+						.attr('class', function(d){
+							return d.type + '-hand';
+						})
+						.attr('x1',0)
+						.attr('y1',function(d){
+							return d.balance ? d.balance : 0;
+						})
+						.attr('x2',0)
+						.attr('y2',function(d){
+							return d.length;
+						})
+						.attr('transform',function(d){
+							return 'rotate('+ d.scale(d.value) +')';
+						});
+			}
+	
+			function moveHands(){
+				d3.select('#clock-hands').selectAll('line')
+				.data(handData)
+					.transition()
+					.attr('transform',function(d){
+						return 'rotate('+ d.scale(d.value) +')';
+					});
+			}
+	
+			function updateData(){
+				var t = new Date();
+				handData[0].value = (t.getHours() % 12) + t.getMinutes()/60 ;
+				handData[1].value = t.getMinutes();
+				handData[2].value = t.getSeconds();
+			}
+	
+			drawClock();
+	
+			setInterval(function(){
+				updateData();
+				moveHands();
+			}, 1000);
+	
+			d3.select(self.frameElement).style("height", height + "px");
+			</script>
+	
+	<p style = "text-align: center; font-size: 4vh"><strong>All our watches have the best possible time keeping capabilities</strong></p>
+	</p>
+	<p style = "text-align: center"> We build watches that are sleek, stylish, and sexy.</p>
+	
+	<p style = "text-align: center"> With our watches, you will be the hottest commodity at any social or business function.</p>
+	
+	<p style = "text-align: center"> Since 1967, Johnson's has done it best.</p>
+	</div>
+</body>
+
+
+<footer style="background-color: #21295C">
+ 		<br>
+ 		<div class="Awards">
+ 			&nbsp Awards and Recognition:
+ 		<br>
+ 		<br>
+ 			 - 3x Winner of "Best Watches for Men" (2016, 2018, 2019)
+ 			<br>
+ 			 - 2x Winner of Blue Dot Award for Product Design (2015, 2017)
+ 			<br>
+ 			- 4x Winner of Style Magazines "Best Watches in America" (2016-2019) 
+ 			<br>
+ 	</div>
+ 		<div class="Social-Media">
+ 			Follow Us!
+ 			<br>
+ 			<br>
+ 			<img src="facebook.png" style="height:80px;width:80px" title="Facebook: Johnsons Watches">
+ 			&nbsp
+ 			<img src="twitter.png" style="height:80px;width:80px" title="Twitter: @johnsonwatches">
+ 			&nbsp
+ 			<img src="instagram.png"style="height:80px;width:80px" title="Instagram: @johnsonwatches">
+ 		</div>
+ 		<div class="Terms">
+ 			<br style="line-height: 2"> 
+ 			 <a href="terms.html" style="padding-left: 100px; text-decoration: underline">Terms & Conditions</a>
+ 		</div>
+ 		<br style="line-height: 2">
+
+
+</footer>
+</html>

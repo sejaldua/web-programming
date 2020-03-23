@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Watch Website</title>
+	<link rel="stylesheet" href="StyleSheet.css">
+	<style type="text/css">
+	
+	.left, .middle, .right {display: inline-block; *display: inline; vertical-align: top; font-size: 12px; text-align: center; padding = 10px; margin = 10px}
+	.left {width: 25%; background-color: #f1f1f1; margin: 3%}
+	.middle {width: 25%; background-color: #f1f1f1;margin: 3%}
+	.right {width: 25%; background-color: #f1f1f1;margin: 3%}
+		.right:hover {background-color: #bad8df}
+	input[type=text] {
+	  margins: auto;
+	  width: 50%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  box-sizing: border-box;
+	}
+	select {
+	  width: 100%;
+	  padding: 16px 20px;
+	  border: none;
+	  border-radius: 4px;
+	  background-color: #f1f1f1;
+	}
+	
+	input[type=button], input[type=submit], input[type=reset] {
+	  background-color: cadetblue;
+	  border: none;
+	  color: black;
+	  padding: 8px 8px;
+	  text-decoration: none;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit], input[type = reset] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit], input[type = reset] :hover {
+  background-color: #45a049;
+}
+.container {
+    width: 30%;
+}
+
+/* Add a background color and some padding around the form */
+
+	@media (max-width: 800px)
+		{
+			
+			html, .left, .middle, .right {display: block; *display: block; vertical-align: none; margin: auto;}
+		    .container {width: 80%}
+		}
+</style>
+</head>
+
+
+
+<body>
+	<nav>
+		<ul>
+			<div class="nav-container">
+				<div class="floatleft">
+					<li><a href="index.html">Home</a></li>
+				</div>
+				<div class="floatright">
+					<li><a href="catalogue.html">Catalogue</a></li>
+					<li><a class="active" href="contact.html">Contact</a></li>
+					<li><a href="aboutus.html">About Us</a></li>
+					<li><a href="terms.html">Terms</a></li>
+					<li><a href="cart.html"><img class="cart" src="carticon.png"></a></li>
+				</div>
+			</div>
+		</ul>
+	</nav>
+
+	<script language="javascript">
+		function validate() {
+			var isValid = true;
+			var name = document.getElementsByName('name')[0];
+			var email = document.getElementsByName('email')[0];
+			var phone = document.getElementsByName('phone')[0];
+			if (name.value == "") {
+				name.focus();
+				return false;
+			}
+			if (phone.value == "") {
+				phone.focus();
+				return false;
+			}
+			if (email.value == "") {
+				email.focus();
+				return false;
+			}
+			if (isValid)
+				alert("Thank you for your message!");
+
+			return isValid;
+		}
+	</script>
+	
+	<div class="textgroup" style="padding-top: 60px;">
+		<h3>Contact Us</h3>
+	</div>
+	
+	<div class = "container">
+		<!-- <h4 style = "text-align: center">Please fill out this contact form with information:</h4> -->
+        <form onsubmit="return validate()">
+			Name <input type="text" name="name" /><br />
+			Phone Number <input type="text" name="phone" /><br />
+			Email <input type="text" name="email" /><br />
+			<br /> What would you like to tell us? <textarea rows="6"></textarea> <br />
+			<div style="text-align: center; align-items: center;">
+				<input style="font-size: 14px" type="submit" value="Submit"/>	
+				<input style="font-size: 14px" type="reset" value="Clear" />
+			</div>
+
+		</form>
+	</div>
+	<div class = "content" style="text-align: center;">
+		<div class = "left" style="height: 150px; vertical-align: middle;">
+				<img style = "padding: 10px, 0px" src="phone.png" height = "75px" alt=""/>
+	  <h3>Phone<br /></h3>
+	  <h4>(617) 627-6948</h4>
+		</div>
+	  <div class = "middle" style="height: 150px; vertical-align: middle;"> 
+				<img style = "padding: 10px, 0px" src="email.png" height = "65px" alt=""/>
+	  <h3>Email <br /></h3>
+	  <h4>jjjohnson@johnson.com</h4>	
+		</div>
+	  <div class = "right" style="height: 150px; vertical-align: middle;">
+		<a href="directions.html" style="font-size: 12px; color:black; text-align:center;padding-left:61px">
+				<img style = "padding: 6px, 0px" src="address.png" height = "65px" alt=""/>
+	  <h3>Address <br/> </h3>
+	  <h4> 512 Washington St Boston, MA 02111</h4>	 
+	  </a>  
+		  </div>
+	</div>
+</body>
+
+
+<footer style="background-color: #21295C">
+ 		<br>
+ 		<div class="Awards">
+ 			&nbsp Awards and Recognition:
+ 		<br>
+ 		<br>
+ 			 - 3x Winner of "Best Watches for Men" (2016, 2018, 2019)
+ 			<br>
+ 			 - 2x Winner of Blue Dot Award for Product Design (2015, 2017)
+ 			<br>
+ 			- 4x Winner of Style Magazines "Best Watches in America" (2016-2019) 
+ 			<br>
+ 	</div>
+ 		<div class="Social-Media">
+ 			Follow Us!
+ 			<br>
+ 			<br>
+ 			<img src="facebook.png" style="height:80px;width:80px" title="Facebook: Johnsons Watches">
+ 			&nbsp
+ 			<img src="twitter.png" style="height:80px;width:80px" title="Twitter: @johnsonwatches">
+ 			&nbsp
+ 			<img src="instagram.png"style="height:80px;width:80px" title="Instagram: @johnsonwatches">
+ 		</div>
+ 		<div class="Terms">
+ 			<br style="line-height: 2"> 
+ 			 <a href="terms.html" style="padding-left: 100px; text-decoration: underline">Terms & Conditions</a>
+ 		</div>
+ 		<br style="line-height: 2">
+
+
+</footer>
+<html>

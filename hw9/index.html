@@ -1,0 +1,395 @@
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Assignment 9</title>
+</head>
+
+<body>
+    <script language="javascript">
+        document.addEventListener("DOMContentLoaded", () => {
+        // part 1 : create a JSON to represent a song list 
+        let setlist = [
+            {
+                "title": "Till the World Ends",
+                "artist": "Britney Spears",
+                "genre": "Pop",
+                "year": "2011"
+            },
+            { 
+                "title": "Spiraling Down",
+                "artist": "Maty Noyes",
+                "genre": "Pop",
+                "year": "2018"
+            },
+            {
+                "title": "In My Room",
+                "artist": "Frank Ocean",
+                "genre": "Hip Hop",
+                "year": "2019"
+            },
+            {
+                "title": "SICKO MODE",
+                "artist": "Travis Scott",
+                "genre": "Hip Hop",
+                "year": "2018"
+            },
+            {
+                "title": "Bags",
+                "artist": "Clairo",
+                "genre": "Pop",
+                "year": "2019"
+            },
+            {
+                "title": "Don't Stand So Close To Me",
+                "artist": "The Police",
+                "genre": "Rock",
+                "year": "1980"
+            },
+            {
+                "title": "So Sick",
+                "artist": "Ne-Yo",
+                "genre": "Hip Hop",
+                "year": "2005"
+            },
+            {
+                "title": "Mask Off",
+                "artist": "Future",
+                "genre": "Hip Hop",
+                "year": "2018"
+            },
+            {
+                "title": "Oceans Away",
+                "artist": "A R I Z O N A",
+                "genre": "Electronic",
+                "year": "2018"
+            },
+            {
+                "title": "Where I Wanna Be",
+                "artist": "A R I Z O N A",
+                "genre": "Electronic",
+                "year": "2018"
+            },
+            {
+                "title": "Supalonely",
+                "artist": "BENEE, Gus Dapperton",
+                "genre": "Alternative",
+                "year": "2020"
+            },
+            {
+                "title": "We Are Here",
+                "artist": "Alicia Keys",
+                "genre": "Soul",
+                "year": "2014"
+            },
+            {
+                "title": "Distance",
+                "artist": "Emily King",
+                "genre": "Soul",
+                "year": "2015"
+            },
+            {
+                "title": "Run",
+                "artist": "Collective Soul",
+                "genre": "Rock",
+                "year": "1999"
+            },
+            {
+                "title": "Kiss Me Thru The Phone",
+                "artist": "Soulja Boy, Sammie",
+                "genre": "Hip Hop",
+                "year": "2008"
+            },
+            {
+                "title": "Evacuate the Dancefloor",
+                "artist": "Cascada",
+                "genre": "Hip Hop",
+                "year": "2009"
+            },
+            {
+                "title": "Alive",
+                "artist": "Empire of the Sun",
+                "genre": "Electronic",
+                "year": "2013"
+            },
+            {
+                "title": "Don't Move",
+                "artist": "Phantogram",
+                "genre": "Electronic",
+                "year": "2011"
+            },
+            {
+                "title": "Freaking Out",
+                "artist": "A R I Z O N A",
+                "genre": "Electronic",
+                "year": "2019"
+            },
+            {
+                "title": "Recover",
+                "artist": "CHVRCHES",
+                "genre": "Electronic",
+                "year": "2013"
+            },
+            {
+                "title": "If I Ever Feel Better",
+                "artist": "Phoenix",
+                "genre": "Electronic",
+                "year": "2000"
+            },
+            {
+                "title": "I Wanna Get Better",
+                "artist": "Bleachers",
+                "genre": "2014",
+                "year": "Rock"
+            },
+            {
+                "title": "Cough Syrup",
+                "artist": "Young the Giant",
+                "genre": "Alternative",
+                "year": "2010"
+            },
+            {
+                "title": "Drive and Disconnect",
+                "artist": "Nao",
+                "genre": "Soul",
+                "year": "2018"
+            },
+            {
+                "title": "Hide and Seek",
+                "artist": "Imogen Heap",
+                "genre": "Electronic",
+                "year": "2005"
+            },
+            {
+                "title": "Hometown Girl",
+                "artist": "ZHU",
+                "genre": "Electronic",
+                "year": "2016"
+            },
+            {
+                "title": "Turn Me On",
+                "artist": "David Guetta (feat. Nicki Minaj)",
+                "genre": "Electronic",
+                "year": "2011"
+            },
+            {
+                "title": "The Way Life Goes",
+                "artist": "Lil Uzi Vert (feat. Oh Wonder)",
+                "genre": "Hip Hop",
+                "year": "2017"
+            },
+            {
+                "title": "WHAT TO DO?",
+                "artist": "Travis Scott (feat. Don Toliver)",
+                "genre": "Hip Hop",
+                "year": "2019"
+            },
+            {
+                "title": "Air I Breathe",
+                "artist": "Mat Kearney",
+                "genre": "Pop",
+                "year": "2015"
+            },
+            {
+                "title": "Cruise",
+                "artist": "Kygo, Andrew Jackson",
+                "genre": "Electronic",
+                "year": "2017"
+            },
+            {
+                "title": "Motion Sickness",
+                "artist": "Phoebe Bridgers",
+                "genre": "Alternative",
+                "year": "2017"
+            },
+            {
+                "title": "Feeling Lonely",
+                "artist": "boy pablo",
+                "genre": "Indie",
+                "year": "2018"
+            },
+            {
+                "title": "Can I Sit Next to You",
+                "artist": "Spoon",
+                "genre": "Alternative",
+                "year": "2017"
+            },
+            {
+                "title": "The Kids Aren't Alright",
+                "artist": "Fall Out Boy",
+                "genre": "Rock",
+                "year": "2015"
+            },
+            {
+                "title": "The Less I Know The Better",
+                "artist": "Tame Impala",
+                "genre": "Indie",
+                "year": "2015"
+            },
+            {
+                "title": "Hard Times",
+                "artist": "Paramore",
+                "genre": "Pop",
+                "year": "2017"
+            },
+            {
+                "title": "Idle Town",
+                "artist": "Conan Gray",
+                "genre": "Alternative",
+                "year": "2017"
+            },
+            {
+                "title": "Breathe Deeper",
+                "artist": "Tame Impala",
+                "genre": "Indie",
+                "year": "2020"
+            },
+            {
+                "title": "Are You Bored Yet?",
+                "artist": "Wallows, Clairo",
+                "genre": "Indie",
+                "year": "2019"
+            },
+            {
+                "title": "Lose My Breath",
+                "artist": "Destiny's Child",
+                "genre": "Hip Hop",
+                "year": "2004"
+            },
+            {
+                "title": "Coroner",
+                "artist": "Lando Chill",
+                "genre": "Hip Hop",
+                "year": "2016"
+            },
+            {
+                "title": "First Train Home",
+                "artist": "Imogen Heap",
+                "genre": "Electronic",
+                "year": "2008"
+            },
+            {
+                "title": "Airplanes",
+                "artist": "B.o.B, Hayley Williams",
+                "genre": "Hip Hop",
+                "year": "2010"
+            },
+            {
+                "title": "Hospital Beds",
+                "artist": "Cold War Kids",
+                "genre": "Alternative",
+                "year": "2006"
+            },
+            {
+                "title": "bodyache",
+                "artist": "Purity Ring",
+                "genre": "Electronic",
+                "year": "2015"
+            },
+            {
+                "title": "Abandon",
+                "artist": "Charles Fauna",
+                "genre": "Alternative",
+                "year": "2017"
+            },
+            {
+                "title": "Are You Feeling Sad?",
+                "artist": "Little Dragon",
+                "genre": "Electronic",
+                "year": "2020"
+            }
+        ];
+
+        // SERIALIZE AND DISPLAY
+        for (i = 0; i < setlist.length; i++) { 
+            serialized = JSON.stringify(setlist[i]);
+            document.getElementById("allData").innerHTML += serialized + "<br\>";
+        }
+        var str_setlist = JSON.stringify(setlist);
+        var json_setlist = JSON.parse(str_setlist);
+        
+        // USER FRIENDLY DISPLAY
+        function displayAll() {
+            s = "<table class='table'>";
+            s += "<tr class='hrow'>";
+            s += "<th><b>TITLE</b></th>";
+            s += "<th><b>ARTIST</b></th>";
+            s += "<th><b>GENRE</b></th>";
+            s += "<th><b>YEAR</b></th>";
+            s += "</tr>";
+            for (x in json_setlist) {
+                s += "<tr>";
+                s += "<th>" + json_setlist[x].title + "</th>";
+                s += "<th>" + json_setlist[x].artist + "</th>";
+                s += "<th>" + json_setlist[x].genre + "</th>";
+                s += "<th>" + json_setlist[x].year + "</th>";
+                s += "</tr>";
+            }
+            document.getElementById("userFriendlyView").innerHTML = s;
+        }
+        displayAll();
+
+        // part 4: filter the data by genre and display only song titles
+        document.querySelector("#button").addEventListener("click", function() {
+            s = "";
+            var selection = document.querySelector("#selection").value;
+            if (selection == "All") {
+                displayAll();
+            }
+            else {
+                s = "<table class='table'>";
+                s += "<tr class='hrow'>";
+                s += "<th><b>TITLE</b></th>";
+                s += "<th><b>ARTIST</b></th>";
+                s += "<th><b>GENRE</b></th>";
+                s += "<th><b>YEAR</b></th>";
+                s += "</tr>";
+                for (x in json_setlist) {
+                    if (selection == json_setlist[x].genre) {
+                        s += "<tr>";
+                        s += "<th>" + json_setlist[x].title + "</th>";
+                        s += "<th>" + json_setlist[x].artist + "</th>";
+                        s += "<th>" + json_setlist[x].genre + "</th>";
+                        s += "<th>" + json_setlist[x].year + "</th>";
+                        s += "</tr>";
+                    }
+                }
+                document.getElementById("userFriendlyView").innerHTML = s;
+            }
+        });
+
+        // display all data
+        document.querySelector("#buttonTwo").addEventListener("click", function() {displayAll();});
+    })
+    
+</script>
+<heading> <h1 style="padding-top: 20px">QUARANTINE BOPS</h1> </heading>
+<div style="width:100%; align-items: center; justify-content: center; display: flex;">
+    <div class="first" style="align-self: flex-start; width: 45%; margin: 10px; padding: 10px; float: left">
+        <h2 style="font-family: 'Signika', sans-serif;">Serialized Data</h2>
+        <p id="allData"></p>
+    </div>
+    <div class="second" style="align-self: flex-start; width: 45%; margin: 10px; padding: 10px; float: right">
+        <form id="form">
+            <h2>User-Friendly Filter</h2>
+            <select name="Genres" id="selection">
+            <option value="All">All Genres</option>
+            <option value="Pop">Pop</option>
+            <option value="Soul">Soul</option>
+            <option value="Hip Hop">Hip Hop</option>
+            <option value="Alternative">Alternative</option>
+            <option value="Indie">Indie</option>
+            <option value="Electronic">Electronic</option>
+            </select>
+            <br><br>
+            <div class="button" id="button">Filter By Genre</div>
+            <div class="button" id="buttonTwo">Show All Songs</div>
+            <div id="tableView"></div>
+            <div id="userFriendlyView"></div>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

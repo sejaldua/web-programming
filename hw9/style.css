@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Signika:wght@300&family=Zilla+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Scope+One&display=swap');
+
+body {
+    font-family: 'Signika', sans-serif;
+    width: 100%;
+    margin: auto;
+    background-color: #f5f5f5;
+}
+section {
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 40px;
+}
+h1 {
+    text-align: center;
+}
+.first {
+    font-family: 'Scope One', serif;
+    background-color:#fff;
+}
+.second {
+    font-family: 'Signika', sans-serif;
+    background-color:#fff;
+}
+.button {
+    background-color: #1bbb54; 
+    border-radius: 30px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: rgb(48, 122, 51);
+    color: white;
+}
+.table {
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 5px;
+}
+tr {
+    border-bottom: 0.3px solid rgb(100, 100, 100);
+    border-top: 0.3px solid rgb(100, 100, 100);
+}
+.hrow {
+    font-size: 14px;
+    color: #C9C9C9;
+}
+th {
+    padding: 8px 14px;
+}

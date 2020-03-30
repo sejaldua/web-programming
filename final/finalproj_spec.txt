@@ -1,0 +1,57 @@
+Your assignment is to create a web app.
+
+The topic is up to you!  It has to have an intuitive interface but I am not requiring a stellar design since this is a web programming course.
+
+I am expecting for you to challenge yourselves by getting something complex working rather than creating a multi-page site.  This is your opportunity to take what you have learned (including how to figure out new web technologies) and create something cool.
+
+Requirements:
+
+Must use HTML/CSS/Javascript and/or jQuery
+Must use a database
+Must use a server side program - you my use PHP or  node.js / Heroku to accomplish this
+Must use an external API
+There is NO requirement for:
+
+# of pages
+# of forms
+# of lines of code
+Ideas:
+
+This is an amazing compendium of ideas.  Also about halfway down the page is a list of public API's
+
+https://flaviocopes.com/sample-app-ideas/
+
+Deliverables:
+
+Working app
+Brief PPT/slide deck explaining the following (note, more than one item can appear on a slide):
+what does your app do
+why did you pick this as a project
+a few screen shots showing key functionality
+sample of code you are most proud of 
+what tools / technologies did you use
+biggest challenge and how you solved it
+most interesting part of the project
+most satisfying part of the project
+list of team members (first and last name) and their contribution to the project
+site any sources used for code help
+Rubric:
+
+Meets requirements: 40 points
+
+Works:  25 points
+
+Creative idea / solution:  15 points
+
+Slide deck/Presentation:  20 points
+
+ 
+
+Suggested timeline - you have approximately 5 weeks left in the semester.
+
+Week 1: research ideas, form structure for project, assign roles
+Week 2: establish dev environment, start coding
+Week 3 : get MVP working
+Week 4 : testing and enhancements
+Week 5 : present
+

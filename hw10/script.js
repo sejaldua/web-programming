@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Make instance of request object
         let request = new XMLHttpRequest;
         console.log("1: request object created");
-    
+        console.log(q);
         // Set the URL for the AJAX request to be the JSON file 
         request.open('GET', `https://www.themealdb.com/api/json/v1/1/filter.php?i=`+q, true);
         console.log("2: opened request file");

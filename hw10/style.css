@@ -78,3 +78,11 @@ div {
     cursor: pointer;
     background-color: rgb(164, 210, 240);
 }
+
+table {
+    width: 350px;
+}
+
+.hrow {
+    font-weight: bold;
+}

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('ID:', data);
                 console.log(JSON.parse(request.responseText).data);
                 
-                document.getElementById("giphyme").innerHTML = '<center><img src = "https://media.giphy.com/media/'+data+'/giphy.gif"  title="GIF via Giphy"></center>';
+                document.getElementById("giphyme").innerHTML = '<span>'+data+'</span>'
             } else {
                 console.log('Reached giphy, but API returned an error');
             }

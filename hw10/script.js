@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var q = "chicken"; // search query
+    // default search query
+    var q = "chicken";
     requestData(q);
     
     function requestData(q) {
-        // Make instance of request object
+        // create new request object
         let request = new XMLHttpRequest;
         console.log("1: request object created");
         console.log(q);
@@ -11,13 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
         request.open('GET', `https://www.themealdb.com/api/json/v1/1/filter.php?i=`+q, true);
         console.log("2: opened request file");
         
-        // Set up event handler/callback
         request.onload = function() {
             console.log("3: readystatechange event fired");
     
             if (request.status >= 200 && request.status < 400) {
-                // wait for done + success
-                // data.data.images.original.url
                 var data = JSON.parse(request.responseText).meals;
                 s = "<br><br><table class='table'>";
                 s += "<tr class='hrow'>";
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function clear() {
         document.getElementById('query').value = "";
     }
-    
+
     document.getElementById("button").addEventListener("click", generate);
     document.addEventListener("keypress", function(e) {
         console.log("keypress listener activated");

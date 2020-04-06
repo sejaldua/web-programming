@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var q = "tada"; // search query
+    var q = "chicken"; // search query
     requestData(q);
     
     function requestData(q) {

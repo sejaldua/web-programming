@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    var q = "chicken"; // search query
     requestData(q);
     
     function requestData(q) {

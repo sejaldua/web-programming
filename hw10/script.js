@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('ID:', data);
                 console.log(JSON.parse(request.responseText).data);
                 
-                document.getElementById("giphyme").innerHTML = s;
+                document.getElementById("meals").innerHTML = s;
             } else {
-                console.log('Reached giphy, but API returned an error');
+                console.log('Reached API but threw error');
             }
         }
         

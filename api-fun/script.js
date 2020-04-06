@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     entries = data.length;
                     i = 0;
-                    s = "<br><br><table class='table'><tr>";
+                    s = "<tr>";
                     for (x in data) {
                         s += "<th>" + data[x].strMeal + "</th>";
                         s += "<th><img src='" + data[x].strMealThumb + "' width='100' height='100'></img></th>";

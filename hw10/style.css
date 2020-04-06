@@ -86,3 +86,7 @@ table {
 .hrow {
     font-weight: bold;
 }
+
+.col1 {
+    width: 50%;
+}

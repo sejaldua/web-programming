@@ -22,16 +22,19 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.getElementById("meals").innerHTML = "<br><br><span>Could not find any meals with that ingredient. :(</span>";
                 } else 
                 {
-                    s = "<br><br><table class='table'>";
-                    s += "<tr class='hrow'>";
-                    s += "<th id='col1'><b>Meal Title</b></th>";
-                    s += "<th><b>Image</b></th>";
-                    s += "</tr>";
+                    entries = data.length;
+                    i = 0;
+                    s = "<br><br><table class='table'><tr>";
                     for (x in data) {
-                        s += "<tr>";
                         s += "<th id='col1'>" + data[x].strMeal + "</th>";
                         s += "<th><img src='" + data[x].strMealThumb + "' width='100' height='100'></img></th>";
-                        s += "</tr>";
+                        if (i != 0 && i % 3 == 0) {
+                            s += "</tr>";
+                            s += "<tr>"
+                        }
+                        if (i == entries - 1)
+                            s += "</tr>";
+                        i += 1;
                     }
 
                     console.log('ID:', data);

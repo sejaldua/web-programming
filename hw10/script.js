@@ -51,10 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
     function generate() {
         q = document.getElementById("query").value;
         console.log('Query: ',document.getElementById("query").value);
-        document.getElementById('query').value = "";
+        setTimeout(clear, 1000);
         requestData(q);
     }
 
+    function clear() {
+        document.getElementById('query').value = "";
+    }
+    
     document.getElementById("button").addEventListener("click", generate);
     document.addEventListener("keypress", function(e) {
         console.log("keypress listener activated");

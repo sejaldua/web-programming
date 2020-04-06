@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         if (i % 2 == 0)
                             s += "<th>" + data[x].strMeal + "</th>";
                         else
-                            s += "<th style='background-color:#302E35'>" + data[x].strMeal + "</th>";
+                            s += "<th style='background-color:#27252B'>" + data[x].strMeal + "</th>";
                         s += "<th><img src='" + data[x].strMealThumb + "' width='100' height='100'></img></th>";
                         if (i == entries - 1)
                             s += "</tr>";

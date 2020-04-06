@@ -55,4 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.getElementById("button").addEventListener("click", generate);
+    document.getElementById("button").addEventListener("keypress", function(e) {
+        if (e.code == 13)
+            generate();
+    });
 });

@@ -18,11 +18,23 @@ document.addEventListener('DOMContentLoaded', function () {
             if (request.status >= 200 && request.status < 400) {
                 // wait for done + success
                 // data.data.images.original.url
-                var data = JSON.parse(request.responseText).meals[0].strMeal;
+                var data = JSON.parse(request.responseText).meals;
+                s = "<table class='table'>";
+                s += "<tr class='hrow'>";
+                s += "<th><b>Meal Title</b></th>";
+                s += "<th><b>Image</b></th>";
+                s += "</tr>";
+                for (x in data) {
+                    s += "<tr>";
+                    s += "<th>" + data[x].strMeal + "</th>";
+                    s += "<th><img src='" + data[x].strMealThumb + "'></img></th>";
+                    s += "</tr>";
+                }
+
                 console.log('ID:', data);
                 console.log(JSON.parse(request.responseText).data);
                 
-                document.getElementById("giphyme").innerHTML = '<span>'+data+'</span>'
+                document.getElementById("giphyme").innerHTML = s;
             } else {
                 console.log('Reached giphy, but API returned an error');
             }

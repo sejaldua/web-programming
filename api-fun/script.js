@@ -26,12 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     i = 0;
                     s = "<tr>";
                     for (x in data) {
-                        s += "<th>" + data[x].strMeal + "</th>";
-                        s += "<th><img src='" + data[x].strMealThumb + "' width='100' height='100'></img></th>";
                         if (i != 0 && i % 3 == 0) {
                             s += "</tr>";
                             s += "<tr>"
                         }
+                        s += "<th>" + data[x].strMeal + "</th>";
+                        s += "<th><img src='" + data[x].strMealThumb + "' width='100' height='100'></img></th>";
                         if (i == entries - 1)
                             s += "</tr>";
                         i += 1;

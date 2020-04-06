@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function generate() {
         q = document.getElementById("query").value;
         console.log('Query: ',document.getElementById("query").value);
+        document.getElementById('query').value = "";
         requestData(q);
     }
 
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("keypress listener activated");
         if (e.keyCode == 13) {
             e.preventDefault();
-            $('#button').trigger("submit");
+            $('#button').trigger("click");
         }
     });
 });

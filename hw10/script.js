@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // wait for done + success
                 // data.data.images.original.url
                 var data = JSON.parse(request.responseText).meals;
-                s = "<table class='table'>";
+                s = "<br><br><table class='table'>";
                 s += "<tr class='hrow'>";
                 s += "<th><b>Meal Title</b></th>";
                 s += "<th><b>Image</b></th>";

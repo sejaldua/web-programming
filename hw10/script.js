@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (request.status >= 200 && request.status < 400) {
                 // wait for done + success
                 // data.data.images.original.url
-                var data = JSON.parse(request.responseText).data[0].id;
+                var data = JSON.parse(request.responseText).meals[0].strMeal;
                 console.log('ID:', data);
                 console.log(JSON.parse(request.responseText).data);
                 

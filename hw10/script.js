@@ -59,8 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log("keypress listener activated");
         if (e.keyCode == 13) {
             e.preventDefault();
-            $('#button').trigger("click");
-            $('#query-form').trigger("submit");
+            $('#button').trigger("submit");
         }
     });
 });

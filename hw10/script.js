@@ -56,9 +56,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById("button").addEventListener("click", generate);
     document.getElementById("button").addEventListener("keypress", function(e) {
-        e.preventDefault();
         console.log("keypress listener activated");
-        if (e.keyCode == 13)
+        if (e.keyCode == 13) {
+            e.preventDefault();
             generate();
+        }
     });
 });

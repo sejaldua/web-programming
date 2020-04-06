@@ -17,22 +17,28 @@ document.addEventListener('DOMContentLoaded', function () {
     
             if (request.status >= 200 && request.status < 400) {
                 var data = JSON.parse(request.responseText).meals;
-                s = "<br><br><table class='table'>";
-                s += "<tr class='hrow'>";
-                s += "<th id='col1'><b>Meal Title</b></th>";
-                s += "<th><b>Image</b></th>";
-                s += "</tr>";
-                for (x in data) {
-                    s += "<tr>";
-                    s += "<th id='col1'>" + data[x].strMeal + "</th>";
-                    s += "<th><img src='" + data[x].strMealThumb + "' width='100' height='100'></img></th>";
+                if (data == null) 
+                {
+                    document.getElementById("meals").innerHTML = "<span>Could not find any meals with that ingredient. :(</span>";
+                } else 
+                {
+                    s = "<br><br><table class='table'>";
+                    s += "<tr class='hrow'>";
+                    s += "<th id='col1'><b>Meal Title</b></th>";
+                    s += "<th><b>Image</b></th>";
                     s += "</tr>";
-                }
+                    for (x in data) {
+                        s += "<tr>";
+                        s += "<th id='col1'>" + data[x].strMeal + "</th>";
+                        s += "<th><img src='" + data[x].strMealThumb + "' width='100' height='100'></img></th>";
+                        s += "</tr>";
+                    }
 
-                console.log('ID:', data);
-                console.log(JSON.parse(request.responseText).data);
-                
-                document.getElementById("meals").innerHTML = s;
+                    console.log('ID:', data);
+                    console.log(JSON.parse(request.responseText).data);
+                    
+                    document.getElementById("meals").innerHTML = s;
+                }
             } else {
                 console.log('Reached API but threw error');
             }
@@ -59,7 +65,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById("button").addEventListener("click", generate);
     document.addEventListener("keypress", function(e) {
-        console.log("keypress listener activated");
         if (e.keyCode == 13) {
             e.preventDefault();
             $('#button').trigger("click");

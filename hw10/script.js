@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.keyCode == 13) {
             e.preventDefault();
             $('#button').trigger("click");
+            $('#query-form').trigger("submit");
         }
     });
 });

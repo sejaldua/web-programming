@@ -67,12 +67,12 @@ div {
     top: 0;
     right: 0;
     height: 50px;
-    width: 100px;
+    width: 120px;
     opacity: 1;
     background-color: rgb(164, 210, 240);
     font-family: "Hind", sans-serif;
     font-weight: bold;
-    font-size: 1em;
+    font-size: 14px;
 }
 
 #button:hover {
@@ -94,6 +94,6 @@ tr {
 }
 
 span {
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
 }

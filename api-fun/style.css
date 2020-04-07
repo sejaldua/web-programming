@@ -30,7 +30,7 @@ a {
 
 input[type="text"]
 {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Helvetica", sans-serif;
     font-size: 1em;
 }
 
@@ -72,6 +72,7 @@ div {
     opacity: 1;
     background-color: rgb(164, 210, 240);
     font-family: "Hind", sans-serif;
+    font-weight: bold;
     font-size: 1em;
 }
 
@@ -90,4 +91,5 @@ table {
 
 span {
     font-size: 18px;
+    text-align: center;
 }

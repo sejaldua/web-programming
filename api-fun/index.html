@@ -21,7 +21,7 @@
         <div class id="results"></div>
     </div>
 
-    <div class="writeup">
+    <div class="writeup" style="background-color: #27252B">
         <!--
             describe the API you selected and what it does
             cite the website where you found it
@@ -47,8 +47,7 @@
         <p>GitHub Public APIs: <a href="https://github.com/public-apis/public-apis#food--drink">https://github.com/public-apis/public-apis#food--drink</a></p>
         <br>
         <h2>Options for the API Request</h2>
-        <p>Word is used as a parameter to the API call. I set "tada" as a default word as you can see when page is loaded. 
-           When user enters a word or phrase in the input field and hit the Generate button, the GIPHY search engine finds GIFs with the word as a search query.</p>
+        <p>Data can be retrieved from the API using many options: meal name (s=), first letter (f=), id (i=), categories (c=), area / cuisine (a=), or ingredients (i=). For my GET request, I used the filter by main ingredient feature, which uses the filter.php page with the ?i=word query string. The input field allows the user to specify which ingredient to use as the API query string for the request. As a default, I set this variable equal to "chicken". You see these results when the page is loaded initially. When a user enters an ingredient and then clicks the button or hits [Enter], the API call is made and the database retrieves meal names and thumbnail photos in a stylized table, or it displays a message to the user saying no meals could be found with the ingredient they entered.</p>
            <br>
            <h2>Application Ideas</h2>
         <p>1. Social Media, Messanger, or Email: <br>

@@ -83,3 +83,7 @@ div {
 table {
     max-width: 700px;
 }
+
+.title {
+    min-width: 133px;
+}

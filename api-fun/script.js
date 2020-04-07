@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var data = JSON.parse(request.responseText).meals;
                 if (data == null) 
                 {
-                    document.getElementById("meals").innerHTML = "<br><br><span>Could not find any meals with that ingredient. :(</span>";
+                    document.getElementById("uhoh").innerHTML = "<br><br><span>Could not find any meals with that ingredient. :(</span>";
                 } else 
                 {
                     entries = data.length;

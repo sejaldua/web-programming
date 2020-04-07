@@ -87,3 +87,7 @@ table {
 .title {
     min-width: 133px;
 }
+
+span {
+    font-size: 18px;
+}

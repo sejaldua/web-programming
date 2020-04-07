@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             s += "<tr>"
                         }
                         if (i % 2 == 0)
-                            s += "<th id='title'>" + data[x].strMeal + "</th>";
+                            s += "<th class='title'>" + data[x].strMeal + "</th>";
                         else
-                            s += "<th style='background-color:#27252B' id='title'>" + data[x].strMeal + "</th>";
+                            s += "<th style='background-color:#27252B' class='title'>" + data[x].strMeal + "</th>";
                         s += "<th><img src='" + data[x].strMealThumb + "' width='100' height='100'></img></th>";
                         if (i == entries - 1)
                             s += "</tr>";

@@ -85,6 +85,11 @@ table {
     max-width: 700px;
 }
 
+tr {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
 .title {
     min-width: 133px;
 }

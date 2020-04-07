@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 var data = JSON.parse(request.responseText).meals;
                 if (data == null) 
                 {
-                    document.getElementById("uhoh").innerHTML = "<br><br><span>Could not find any meals with that ingredient. :(</span>";
+                    document.getElementById("results").innerHTML = "<br><br><span>Could not find any meals with that ingredient. :(</span>";
                 } else 
                 {
                     entries = data.length;
                     i = 0;
-                    s = "<tr>";
+                    s = "<table class='table' id='meals'><tr>";
                     for (x in data) {
                         if (i != 0 && i % 3 == 0) {
                             s += "</tr>";
@@ -39,11 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             s += "</tr>";
                         i += 1;
                     }
+                    s += "</table";
 
                     console.log('ID:', data);
                     console.log(JSON.parse(request.responseText).data);
                     
-                    document.getElementById("meals").innerHTML = s;
+                    document.getElementById("results").innerHTML = s;
                 }
             } else {
                 console.log('Reached API but threw error');

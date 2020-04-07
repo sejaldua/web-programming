@@ -22,7 +22,7 @@
         <hr style="border: 1px dashed #fff; width: 100%; margin: auto; margin-top: 5%; margin-bottom: 5%;">
     </div>
 
-    <div class="writeup" style="background-color: #27252B">
+    <div class="writeup" style="background-color: #27252B; padding-left: 5px; padding-right: 5px;">
         <!--
             describe the API you selected and what it does
             cite the website where you found it
@@ -43,18 +43,18 @@
         </p>
         <br>
         <h2>Citations</h2>
-        <p>TheMealDB website: <a href="https://www.themealdb.com/api.php">https://www.themealdb.com/api.php</a></p>
-        <p>GitHub Public APIs: <a href="https://github.com/public-apis/public-apis#food--drink">https://github.com/public-apis/public-apis#food--drink</a></p>
+        <p>TheMealDB website: <a href="https://www.themealdb.com/api.php">https://www.themealdb.com/api.php</a><br>
+        GitHub Public APIs: <a href="https://github.com/public-apis/public-apis#food--drink">https://github.com/public-apis/public-apis#food--drink</a></p>
         <br>
         <h2>Options for the API Request</h2>
         <p>Data can be retrieved from the API using many options: meal name (s=), first letter (f=), id (i=), categories (c=), area / cuisine (a=), or ingredients (i=). For my GET request, I used the filter by main ingredient feature, which uses the filter.php page with the ?i=word query string. The input field allows the user to specify which ingredient to use as the API query string for the request. As a default, I set this variable equal to "chicken". You see these results when the page is loaded initially. When a user enters an ingredient and then clicks the button or hits [Enter], the API call is made and the database retrieves meal names and thumbnail photos in a stylized table, or it displays a message to the user saying no meals could be found with the ingredient they entered.</p>
-           <br>
-           <h2>Application Ideas</h2>
-        <p>1. Social Media, Messanger, or Email: <br>
+        <br>
+        <h2>Application Ideas</h2>
+        <p>1. Inspiring creativity in the kitchen (especially during quarantine) <br>
             GIFs can be used in communicating context. Users can easily express themselves and animate their emotions and conversations with GIFs
             when they communicate with others. It would be great if a keyword is automatically extracted from text a user has written and an application recommends proper GIFs for it.
         </p>
-        <p>2. New Tab Extension for Chrome: <br>
+        <p>2. Simulating a cooking show <br>
             When a user opens a new tab, random or trending GIFs are displayed. It will transform a boring “new tab” page into a fun one. 
             It might be better than a search-box-filled screen. We can also use data from other APIs such as weather or
             news media for a parameter (search query). Users then can be provided context-related GIFs.  

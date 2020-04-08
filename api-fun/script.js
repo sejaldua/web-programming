@@ -4,32 +4,38 @@ document.addEventListener('DOMContentLoaded', function () {
     requestData(q);
     
     function requestData(q) {
-        // create new request object
+        // Step 1: create new instance of request object
         let request = new XMLHttpRequest;
         console.log("1: request object created");
         console.log(q);
-        // Set the URL for the AJAX request to be the JSON file 
+        // Step 2: Set the URL for the AJAX request to be the JSON file 
         request.open('GET', `https://www.themealdb.com/api/json/v1/1/filter.php?i=`+q, true);
         console.log("2: opened request file");
-        
-        request.onload = function() {
+        // Step 3: set up event handler / callback
+        request.onreadystatechange = function() {
             console.log("3: readystatechange event fired");
     
-            if (request.status >= 200 && request.status < 400) {
+            if (request.readyState == 4 && request.status == 200) {
                 var data = JSON.parse(request.responseText).meals;
+
+                // no data matches the query
                 if (data == null) 
                 {
                     document.getElementById("results").innerHTML = "<br><br><span>Could not find any meals with that ingredient. :(</span>";
-                } else 
+                } 
+                // display query results
+                else 
                 {
                     entries = data.length;
                     i = 0;
                     s = "<table class='table' id='meals'><tr>";
                     for (x in data) {
+                        // managing table columns
                         if (i != 0 && i % 3 == 0) {
                             s += "</tr>";
                             s += "<tr>"
                         }
+                        // alternating color scheme
                         if (i % 2 == 0)
                             s += "<th class='title'>" + data[x].strMeal + "</th>";
                         else
@@ -46,7 +52,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     
                     document.getElementById("results").innerHTML = s;
                 }
-            } else {
+            } 
+            else if (request.readyState == 4 && request.status != 200) {
+                document.getElementById("results").innerHTML = "Uh Oh. Something went wrong."
+            }
+            else {
                 console.log('Reached API but threw error');
             }
         }
@@ -55,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Connection error");
         };
     
+        // Step 4: fire off HTTP request
         request.send();
         console.log("4: Request sent");
     }

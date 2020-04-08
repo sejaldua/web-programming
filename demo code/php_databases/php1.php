@@ -12,6 +12,7 @@
 	<h1>This page is created with PHP</h1>
 	<?php
 	echo "This line is being done with an 'echo'";
+	$pw = "secret";
 	?>
 </body>
 </html>

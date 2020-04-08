@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("3: readystatechange event fired");
             
             if (request.readyState == 4 && request.status == 200) {
-                var data = JSON.parse(request.responseText).global;
+                var data = JSON.parse(request.responseText).Global;
                 console.log(data);
 
                 document.getElementById("results").innerHTML =  "<p>"+data+"</p>";

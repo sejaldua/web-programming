@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
             if (request.readyState == 4 && request.status == 200) {
                 var data = JSON.parse(request.responseText);
+                console.log(data);
 
                 document.getElementById("results").innerHTML =  data;
             } 

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     // default search query
     var q = "country";
+    var MongoClient = require('mongodb').MongoClient;
+    var url = "mongodb://localhost:27017/";
     requestData(q);
     
     function requestData(q) {
@@ -18,6 +20,20 @@ document.addEventListener('DOMContentLoaded', function () {
             if (request.readyState == 4 && request.status == 200) {
                 var data = JSON.parse(request.responseText).Countries;
                 console.log(data);
+
+
+                MongoClient.connect(url, function(err, db) {
+                    if (err) throw err;
+                    var dbo = db.db("COVID");
+                    for (x in data) {
+                        var myobj = {Country: data[x].Country, NewConfirmed: data[x].NewConfirmed, TotalConfirmed: data[x].TotalConfirmed, NewDeaths: data[x].NewDeaths, TotalDeaths: data[x].TotalDeaths, NewRecovered: data[x].NewRecovered, TotalRecovered: data[x].TotalRecovered};
+                        dbo.collection("summary").insertOne(myobj, function(err, res) {
+                            if (err) throw err;
+                            console.log("1 document inserted");
+                        });
+                    }
+                    db.close();
+                });
                 s = "<table class='table'><tr>";
                 s += "<tr>";
                 s += "<th>Country</th>";

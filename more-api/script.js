@@ -16,10 +16,32 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("3: readystatechange event fired");
             
             if (request.readyState == 4 && request.status == 200) {
-                var data = JSON.parse(request.responseText).Global;
+                var data = JSON.parse(request.responseText).Countries;
                 console.log(data);
+                s = "<table class='table'><tr>";
+                s += "<tr>";
+                s += "<th>Country</th>";
+                s += "<th>New Confirmed</th>";
+                s += "<th>Total Confirmed</th>";
+                s += "<th>New Deaths</th>";
+                s += "<th>Total Deaths</th>";
+                s += "<th>New Recovered</th>";
+                s += "<th>Total Recovered</th>";
+                s += "</tr>";
+                for (x in data) {
+                    s += "<tr>"
+                    s += "<th>" + data[x].Country + "</th>";
+                    s += "<th>" + data[x].NewConfirmed + "</th>";
+                    s += "<th>" + data[x].TotalConfirmed + "</th>";
+                    s += "<th>" + data[x].NewDeaths + "</th>";
+                    s += "<th>" + data[x].TotalDeaths + "</th>";
+                    s += "<th>" + data[x].NewRecovered + "</th>";
+                    s += "<th>" + data[x].TotalRecovered + "</th>";
+                    s += "</tr>"
+                }
+                s += "</table>"
 
-                document.getElementById("results").innerHTML =  "<p>"+data+"</p>";
+                document.getElementById("results").innerHTML = s;
             } 
             else if (request.readyState == 4 && request.status != 200) {
                 document.getElementById("results").innerHTML = "Uh Oh. Something went wrong."

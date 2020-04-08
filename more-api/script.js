@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Step 3: set up event handler / callback
         request.onreadystatechange = function() {
             console.log("3: readystatechange event fired");
-    
+            
             if (request.readyState == 4 && request.status == 200) {
                 var data = JSON.parse(request.responseText);
                 console.log(data);

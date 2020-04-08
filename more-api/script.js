@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("3: readystatechange event fired");
             
             if (request.readyState == 4 && request.status == 200) {
-                var data = JSON.parse(request.responseText);
+                var data = JSON.parse(request.responseText).global;
                 console.log(data);
 
-                document.getElementById("results").innerHTML =  data;
+                document.getElementById("results").innerHTML =  "<p>"+data+"</p>";
             } 
             else if (request.readyState == 4 && request.status != 200) {
                 document.getElementById("results").innerHTML = "Uh Oh. Something went wrong."

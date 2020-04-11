@@ -64,4 +64,4 @@ Joe’s only sells three items: hotdogs ($3.25 each), French Fries ($2.00 each) 
 **Language(s):** HTML, CSS, Javascript, JSON, APIs  
 **Description:** Use the AJAX data pattern we learned to send a request to the API, retrieve some data and display the data.  
 
-<img src="images/mealinspo.png" height="400">
+<img src="images/mealinspo.png" height="500">

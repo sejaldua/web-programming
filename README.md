@@ -51,3 +51,10 @@ Joe’s only sells three items: hotdogs ($3.25 each), French Fries ($2.00 each) 
 **Description:**  Add validation (using Javascript) to the provided HTML form. The validation should be approached in two parts: when the user selects a quantity and when the user clicks submit.  
 
 <img src="images/jade.png" height="500">
+
+### Assignment 9: JSON
+**URL:** https://sejaldua.com/web-programming/hw9/index.html
+**Language(s):** HTML, CSS, Javascript, JSON  
+**Description:** Your assignment is to create a JSON to represent a set list for a cover band.  Each entry should have space to describe the artist(s), title, music genre(s), and year the song was released. Includes a form that allows the user to filter by a genre, only showing songs within the setlist that match the selected genre.
+
+<img src="images/quarantinebops.png" height="500">

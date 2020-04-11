@@ -53,8 +53,15 @@ Joe’s only sells three items: hotdogs ($3.25 each), French Fries ($2.00 each) 
 <img src="images/jade.png" height="500">
 
 ### Assignment 9: JSON
-**URL:** https://sejaldua.com/web-programming/hw9/index.html
+**URL:** https://sejaldua.com/web-programming/hw9/index.html  
 **Language(s):** HTML, CSS, Javascript, JSON  
-**Description:** Your assignment is to create a JSON to represent a set list for a cover band.  Each entry should have space to describe the artist(s), title, music genre(s), and year the song was released. Includes a form that allows the user to filter by a genre, only showing songs within the setlist that match the selected genre.
+**Description:** Your assignment is to create a JSON to represent a set list for a cover band.  Each entry should have space to describe the artist(s), title, music genre(s), and year the song was released. Includes a form that allows the user to filter by a genre, only showing songs within the setlist that match the selected genre.  
 
-<img src="images/quarantinebops.png" height="500">
+<img src="images/quarantinebops.png" height="550">
+
+### Assignment 10: API Fun
+**URL:** https://sejaldua.com/web-programming/api-fun/index.html  
+**Language(s):** HTML, CSS, Javascript, JSON, APIs  
+**Description:** Use the AJAX data pattern we learned to send a request to the API, retrieve some data and display the data.  
+
+<img src="images/mealinspo.png" height="400">

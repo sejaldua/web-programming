@@ -1,0 +1,23 @@
+This assignment will require you to use many of the skills you have developed throughout the course.
+
+You are tasked as follows:
+
+1. Create a MongoDB database and a collection called companies to store company names and their stock ticker
+
+2. Create a web app to read a comma delimited file of companies and their stock ticker code - and insert extries into the MongoDB companies collection.  Use this file for sample data: companies.csvPreview the document
+
+3. Create an HTML file with a form that asks the user to enter a stock ticker OR a company name (you may want to do this as two separate input boxes - or one input box with a radio button to select the type of input).  The form action is directed to a Node.js app that displays the record associated with the company name or stock ticker.
+
+Notes:
+
+For full credit, the database needs to be hosted in the cloud.  The web apps can be local.
+Extra credit (10 points) if the web app is online
+Deliverables:
+
+A pdf of ALL code
+
+The URL if the file is online or a recording of the app running if the app is not online
+
+All code files
+
+Answer to the question:  Node.js vs PHP  which do you prefer and WHY.

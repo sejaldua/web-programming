@@ -25,8 +25,8 @@ function main()
             if (db) {
                 if(err) { return console.log(err); }
             
-                var dbo = db.db("companies");
-                var collection = dbo.collection('stocks');
+                var dbo = db.db("stocks");
+                var collection = dbo.collection('companies');
                 
                 console.log("here");
                 collection.insertMany(csvData, (err, res) => {

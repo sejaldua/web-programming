@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb+srv://sejaldua:appleapple@cluster0-eeltb.mongodb.net/test?retryWrites=true&w=majority";
+const url = "mongodb+srv://sejaldua:@cluster0-eeltb.mongodb.net/test?retryWrites=true&w=majority";
 
 function main() 
 {

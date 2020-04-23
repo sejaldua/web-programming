@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const url1 = "mongodb+srv://sejaldua:Tbl@zer58@cluster0-eeltb.mongodb.net/test?retryWrites=true&w=majority";
+var port = process.env.PORT || 8000;
 
 var http = require('http');
 var url = require('url');
@@ -14,7 +15,7 @@ http.createServer(function (req, res) {
     
     connect(client, checkBox, query, res);
 
-}).listen(8000);
+}).listen(port);
 
 async function connect(client, checkBox, query, res) {
     client.connect(err => {
@@ -32,14 +33,14 @@ async function connect(client, checkBox, query, res) {
                 for (i = 0; i < items.length; i++) {
                     if (checkBox) {
                         if (items[i].company == query) {
-                            res.write(query + "'s ticker symbol is: " + items[i].ticker);
+                            res.write("<html><body style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>" + query + "'s ticker symbol is: " + items[i].ticker + "</body></html>");
                             found = true;
                             break;
                         }
                     }
                     else {
                         if (items[i].ticker == query) {
-                            res.write(query + " is the ticker symbol for " + items[i].company);
+                            res.write("<html><body style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>" + query + " is the ticker symbol for " + items[i].company + "</body></html>");
                             found = true;
                             break;
                         }
@@ -47,7 +48,7 @@ async function connect(client, checkBox, query, res) {
                 }
 
                 if (!found) {
-                    res.write("Oops! The company or ticker you have queried is not in our stock database.");
+                    res.write("<html><body style='text-align: center; background-color: black; color: rgb(55, 238, 18); margin-top: 30px; font-size: 14px;'>Oops! The company or ticker you have queried is not in our stock database.</body></html");
                 }
             }
         });  //end find

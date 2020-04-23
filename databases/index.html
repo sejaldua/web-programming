@@ -9,32 +9,51 @@
     </head>
 
     <body>
-        <p>Please enter a company name OR a company ticker.
-        </p>
-    <form name="form1" action="http://localhost:8000/">
-        <label class="switch" for="toggle">
-            <input type="checkbox" name="toggle" id="toggle" onclick="myFunction()">
-            <span class="slider"></span>
-          </label>
-    <div id="text">Ticker Symbol</div>
-    <input type="text" name="query" id="field">
-    <br>
-    
-    <input type="submit">
-    
-    </form>  
+    <div id="box">
+        <h2>Please enter a company name OR a company ticker.
+        </h2>
+        <form name="form1" action="https://ancient-caverns-12492.herokuapp.com/">
+            <table>
+                <tr>
+                    <th id="one">
+                        <label class="switch" for="toggle">
+                            <input type="checkbox" name="toggle" id="toggle" onclick="myFunction()">
+                            <span class="slider"></span>
+                        </label>
+                    </th>
+                    <th id="two">
+                        <div id="text" >Ticker Symbol</div>
+                    </th>
+                    <th id="three">
+                        <input type="text" name="query" id="field" placeholder="AAPL">
+                    </th>
+                    <th id="four">
+                        <input type="submit">
+                    </th>
+                </tr>
+            </table>
 
-    <script>
-        function myFunction() {
-            var checkBox = document.getElementById("toggle");
-            var text = document.getElementById("text");
-            if (checkBox.checked == true) {
-                text.innerHTML = "Company Name";
+        <br><br>
+
+        
+
+            
+        </form>  
+
+        <script>
+            function myFunction() {
+                var checkBox = document.getElementById("toggle");
+                var text = document.getElementById("text");
+                if (checkBox.checked == true) {
+                    text.innerHTML = "Company Name";
+                    document.getElementById("field").placeholder="Apple Inc.";
+                }
+                else {
+                    text.innerHTML = "Ticker Symbol";
+                    document.getElementById("field").placeholder="AAPL";
+                }
             }
-            else {
-                text.innerHTML = "Ticker Symbol";
-            }
-        }
-    </script>
+        </script>
+    </div>
     </body>
 </html>

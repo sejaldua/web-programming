@@ -1,14 +1,14 @@
 {
-  "name": "stocks",
+  "name": "ancient-caverns-12492",
   "version": "1.0.0",
   "description": "COMP20 HW: Databases (Node + Mongo + Heroku)",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sejaldua/web-programming/tree/master/databases"
+    "url": ""
   },
   "keywords": [
     "node",
@@ -22,5 +22,6 @@
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongodb": "^3.5.6"
-  }
+  },
+"homepage": "http://ancient-caverns-12492.herokuapp.com/index.html"
 }

@@ -1,7 +1,7 @@
 var fs = require('fs');
 const fastcsv = require("fast-csv");
 const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb+srv://sejaldua:Tbl@zer58@cluster0-eeltb.mongodb.net/test?retryWrites=true&w=majority";
+const url = "mongodb+srv://sejaldua:<PASSWORD>@cluster0-eeltb.mongodb.net/test?retryWrites=true&w=majority";
 
 function main() 
 {

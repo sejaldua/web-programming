@@ -1,27 +1,40 @@
+  
 <html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Week 14: Query Stock Database</title>
-        <meta charset="utf-8"/>
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Week 10 Assignment - API Fun</title>
+    <title>Assignment Week 14: Stock Ticker Query</title>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
+    </head>
+
     <body>
-        <form id="query-form">
-            <div class="onoffswitch">
-                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                </label>
-            </div>
-             <input id="query" name="query" type="text" required>
-             <button id="button">Search</button>
-        </form>
+        <p>Please enter a company name OR a company ticker.
+        </p>
+    <form name="form1" action="http://localhost:8000/">
+        <label class="switch" for="toggle">
+            <input type="checkbox" name="toggle" id="toggle" onclick="myFunction()">
+            <span class="slider"></span>
+          </label>
+    <div id="text">Ticker Symbol</div>
+    <input type="text" name="query" id="field">
+    <br>
+    
+    <input type="submit">
+    
+    </form>  
+
+    <script>
+        function myFunction() {
+            var checkBox = document.getElementById("toggle");
+            var text = document.getElementById("text");
+            if (checkBox.checked == true) {
+                text.innerHTML = "Company Name";
+            }
+            else {
+                text.innerHTML = "Ticker Symbol";
+            }
+        }
+    </script>
     </body>
 </html>

@@ -1,6 +1,8 @@
 # web-programming
 Homework and projects from COMP20: Web Programming (taken in Spring 2020)
 
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsejaldua%2Fweb-programming&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+
 ### Assignment 2: Introduction
 **URL:** https://sejaldua.com/web-programming/hw2/introduction.html  
 **Language(s):** HTML, CSS  
